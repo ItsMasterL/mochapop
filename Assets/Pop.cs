@@ -29,6 +29,9 @@ public class Pop : MonoBehaviour
             anim.Play("not pop");
             unpop.Play();
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
     }
 
     void OnGUI()
