@@ -284,7 +284,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.31132078, b: 0.27057248, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.31132078, b: 0.27057248, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -511,7 +511,7 @@ MonoBehaviour:
     m_RichText: 1
     m_TextClipping: 0
     m_ImagePosition: 3
-    m_ContentOffset: {x: 673.8, y: 213.3}
+    m_ContentOffset: {x: 1122.8, y: 773.1}
     m_FixedWidth: 0
     m_FixedHeight: 0
     m_StretchWidth: 1
