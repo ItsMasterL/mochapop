@@ -18,7 +18,7 @@ public class Status : MonoBehaviour
         DiscordRpc.Initialize("930631176195031041", ref this.handlers, true, null);
         this.presence.details = "Popping";
         this.presence.state = "0 pops";
-        this.presence.largeImageKey = "open";
+        this.presence.largeImageKey = "closed";
         this.presence.smallImageKey = "";
         this.presence.largeImageText = "look its mocha pop";
         this.presence.smallImageText = "";
@@ -31,6 +31,13 @@ public class Status : MonoBehaviour
         {
             popcount += 1;
             this.presence.state = (popcount.ToString() + " pops");
+            this.presence.largeImageKey = "open";
+            DiscordRpc.UpdatePresence(ref this.presence);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            this.presence.largeImageKey = "closed";
             DiscordRpc.UpdatePresence(ref this.presence);
         }
     }
