@@ -9,6 +9,7 @@ public class Pop : MonoBehaviour
     public AudioSource unpop;
     public int popcount = 0;
     public GUIStyle style;
+
     // Use this for initialization
     void Start()
     {
@@ -22,7 +23,6 @@ public class Pop : MonoBehaviour
             anim.Play("pop");
             pop.Play();
             popcount += 1;
-            //PresenceManager.UpdatePresence(detail: "Popping", state: popcount.ToString() + " pops");
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
