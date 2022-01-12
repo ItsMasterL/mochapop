@@ -22,6 +22,7 @@ public class Pop : MonoBehaviour
             anim.Play("pop");
             pop.Play();
             popcount += 1;
+            //PresenceManager.UpdatePresence(detail: "Popping", state: popcount.ToString() + " pops");
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
