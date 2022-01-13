@@ -38,5 +38,6 @@ public class Pop : MonoBehaviour
     void OnGUI()
     {
         GUI.Label(new Rect(10, 10, 100, 20), popcount.ToString(), style);
+        GUI.Label(new Rect(10, 20, 100, 20), "Press Space to pop", style);
     }
 }
