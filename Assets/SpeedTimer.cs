@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DiscordRichPresence;
 
 public class SpeedTimer : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SpeedTimer : MonoBehaviour
     public bool isActive = false;
     public GameObject mocha;
     public GameObject ten;
+    public GameObject discord;
 
     // Start is called before the first frame update
     public void Initiate()
@@ -19,6 +21,8 @@ public class SpeedTimer : MonoBehaviour
         {
             isActive = true;
             mocha.GetComponent<Pop>().canPop = false;
+            discord.gameObject.GetComponent<Status>().presence.details = "Popping, but faster";
+            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
         }
     }
 
@@ -50,6 +54,8 @@ public class SpeedTimer : MonoBehaviour
             count = 0;
             resultsTime = 3;
             popcounted = 0;
+            discord.gameObject.GetComponent<Status>().presence.details = "Popping";
+            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
         }
     }
 }

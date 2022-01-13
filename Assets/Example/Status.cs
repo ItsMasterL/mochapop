@@ -6,7 +6,7 @@ using DiscordRichPresence;
 public class Status : MonoBehaviour
 {
     private DiscordRpc.EventHandlers handlers;
-    private DiscordRpc.RichPresence presence;
+    public DiscordRpc.RichPresence presence;
     
     public int popcount;
     public GameObject mocha;
@@ -44,20 +44,5 @@ public class Status : MonoBehaviour
             this.presence.largeImageKey = "closed";
             DiscordRpc.UpdatePresence(ref this.presence);
         }
-
-        if (Speedy.GetComponent<SpeedTimer>().isActive == true)
-        {
-            this.presence.details = "Popping, but faster";
-        }
-
-        if (ten.GetComponent<TenTimer>().isActive == true)
-        {
-            this.presence.details = "Popping, but with more stress";
-        }
-
-        if (Speedy.GetComponent<SpeedTimer>().isActive == false && ten.GetComponent<TenTimer>().isActive == false)
-            {
-                this.presence.details = "Popping";
-            }
     }
 }

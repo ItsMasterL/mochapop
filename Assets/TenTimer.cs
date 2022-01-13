@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DiscordRichPresence;
 
 public class TenTimer : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TenTimer : MonoBehaviour
     public bool isActive = false;
     public GameObject mocha;
     public GameObject speed;
+    public GameObject discord;
 
     // Start is called before the first frame update
     public void Initiate()
@@ -28,6 +30,8 @@ public class TenTimer : MonoBehaviour
         if (isActive == true && beginTime > 0)
         {
             beginTime -= Time.deltaTime;
+            discord.gameObject.GetComponent<Status>().presence.details = "Popping, but with more stress";
+            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
         }
 
         if (isActive == true && beginTime <= 0 && countdown > 0)
@@ -50,6 +54,8 @@ public class TenTimer : MonoBehaviour
             countdown = 10;
             resultsTime = 3;
             popcounttimed = 0;
+            discord.gameObject.GetComponent<Status>().presence.details = "Popping";
+            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
         }
     }
 }

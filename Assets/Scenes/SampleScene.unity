@@ -368,8 +368,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7a1a2b684c3f146b5aa4fb4a93bbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  presence:
+    state: 
+    details: 
+    startTimestamp: 0
+    endTimestamp: 0
+    largeImageKey: 
+    largeImageText: 
+    smallImageKey: 
+    smallImageText: 
+    partyId: 
+    partySize: 0
+    partyMax: 0
+    matchSecret: 
+    joinSecret: 
+    spectateSecret: 
+    instance: 0
   popcount: 0
   mocha: {fileID: 810866282}
+  ten: {fileID: 1287606017}
+  Speedy: {fileID: 2100810674}
 --- !u!4 &406015753
 Transform:
   m_ObjectHideFlags: 0
@@ -1296,6 +1314,7 @@ MonoBehaviour:
   isActive: 0
   mocha: {fileID: 810866282}
   speed: {fileID: 2100810674}
+  discord: {fileID: 406015750}
 --- !u!1 &1355239868
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,6 +1960,7 @@ MonoBehaviour:
   isActive: 0
   mocha: {fileID: 810866282}
   ten: {fileID: 1287606017}
+  discord: {fileID: 406015750}
 --- !u!114 &2100810677
 MonoBehaviour:
   m_ObjectHideFlags: 0
