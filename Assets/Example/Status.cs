@@ -10,6 +10,8 @@ public class Status : MonoBehaviour
     
     public int popcount;
     public GameObject mocha;
+    public GameObject ten;
+    public GameObject Speedy;
 
     public void Start()
     {
@@ -42,5 +44,20 @@ public class Status : MonoBehaviour
             this.presence.largeImageKey = "closed";
             DiscordRpc.UpdatePresence(ref this.presence);
         }
+
+        if (Speedy.GetComponent<SpeedTimer>().isActive == true)
+        {
+            this.presence.details = "Popping, but faster";
+        }
+
+        if (ten.GetComponent<TenTimer>().isActive == true)
+        {
+            this.presence.details = "Popping, but with more stress";
+        }
+
+        if (Speedy.GetComponent<SpeedTimer>().isActive == false && ten.GetComponent<TenTimer>().isActive == false)
+            {
+                this.presence.details = "Popping";
+            }
     }
 }
