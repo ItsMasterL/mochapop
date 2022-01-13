@@ -9,6 +9,7 @@ public class Status : MonoBehaviour
     private DiscordRpc.RichPresence presence;
     
     public int popcount;
+    public GameObject mocha;
 
     public void Start()
     {
@@ -27,9 +28,10 @@ public class Status : MonoBehaviour
 
     public void Update()
     {
+        popcount = mocha.GetComponent<Pop>().popcount;
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            popcount += 1;
             this.presence.state = (popcount.ToString() + " pops");
             this.presence.largeImageKey = "open";
             DiscordRpc.UpdatePresence(ref this.presence);
