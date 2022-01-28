@@ -9,6 +9,7 @@ public class Pop : MonoBehaviour
     public AudioSource unpop;
     public int popcount = 0;
     public bool canPop = true;
+    public bool isAndroid = false;
 
     public GameObject Timer10s;
     public GameObject pop100;
@@ -17,13 +18,17 @@ public class Pop : MonoBehaviour
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            isAndroid = true;
+        }
     }
     // Update is called once per frame
     void Update()
     {
         if (canPop == true) {
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || (isAndroid == true && Input.GetMouseButtonDown(0)))
             {
                 anim.Play("pop");
                 pop.Play();
@@ -38,7 +43,7 @@ public class Pop : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space) || (isAndroid == true && Input.GetMouseButtonUp(0)))
             {
                 anim.Play("not pop");
                 unpop.Play();
