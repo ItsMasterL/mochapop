@@ -10,8 +10,6 @@ public class Status : MonoBehaviour
     
     public int popcount;
     public GameObject mocha;
-    public GameObject ten;
-    public GameObject Speedy;
 
     public void Start()
     {

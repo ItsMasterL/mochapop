@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class TimeScript : MonoBehaviour
 {
-    public GameObject TenTime;
-    public GameObject Speedy;
+    public GameObject Events;
 
-    public Text popscore;
+    public TextMeshProUGUI popscore;
 
     // Start is called before the first frame update
     void Start()
@@ -20,24 +19,28 @@ public class TimeScript : MonoBehaviour
     void Update()
     {
         //init
-        float tt_beginTime = TenTime.GetComponent<TenTimer>().beginTime;
-        float tt_countdown = TenTime.GetComponent<TenTimer>().countdown;
-        bool tt_isActive = TenTime.GetComponent<TenTimer>().isActive;
+        float tt_beginTime = Events.GetComponent<TenTimer>().beginTime;
+        float tt_countdown = Events.GetComponent<TenTimer>().countdown;
+        bool tt_isActive = Events.GetComponent<TenTimer>().isActive;
 
-        float st_beginTime = Speedy.GetComponent<SpeedTimer>().beginTime;
-        float st_count = Speedy.GetComponent<SpeedTimer>().count;
-        bool st_isActive = Speedy.GetComponent<SpeedTimer>().isActive;
+        float st_beginTime = Events.GetComponent<SpeedTimer>().beginTime;
+        float st_count = Events.GetComponent<SpeedTimer>().count;
+        bool st_isActive = Events.GetComponent<SpeedTimer>().isActive;
 
         //Ten Second Timer
         if (tt_isActive == true && tt_beginTime > 0)
         {
-            popscore.text = tt_beginTime.ToString("0");
+            int tt_disptime = Mathf.FloorToInt(tt_beginTime) + 1;
+            popscore.text = tt_disptime.ToString("0");
         } else if (tt_isActive == true && tt_beginTime <= 0 && tt_countdown > 0)
         {
             popscore.text = tt_countdown.ToString("0.00");
-        } else if (st_isActive == true && st_beginTime > 0)
+        }
+        //Speed test
+        else if (st_isActive == true && st_beginTime > 0)
         {
-            popscore.text = st_beginTime.ToString("0");
+            int st_disptime = Mathf.FloorToInt(st_beginTime) + 1;
+            popscore.text = st_disptime.ToString("0");
         }
         else if (st_isActive == true && st_beginTime <= 0)
         {

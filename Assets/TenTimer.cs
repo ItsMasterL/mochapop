@@ -11,13 +11,12 @@ public class TenTimer : MonoBehaviour
     public float popcounttimed = 0;
     public bool isActive = false;
     public GameObject mocha;
-    public GameObject speed;
     public GameObject discord;
 
     // Start is called before the first frame update
     public void Initiate()
     {
-        if (isActive == false && speed.GetComponent<SpeedTimer>().isActive == false)
+        if (isActive == false)
         {
             isActive = true;
             mocha.GetComponent<Pop>().canPop = false;

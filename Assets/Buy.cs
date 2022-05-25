@@ -27,6 +27,8 @@ public class Buy : MonoBehaviour
             purchased = true;
             chaching.Play();
             bought.gameObject.SetActive(true);
+
+            SaveData.Save();
             gameObject.SetActive(false);
         }
     }
