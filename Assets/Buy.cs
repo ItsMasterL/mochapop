@@ -11,11 +11,13 @@ public class Buy : MonoBehaviour
     public int price;
 
     public GameObject bought;
+    public int purchaseID;
 
     // Start is called before the first frame update
     void Start()
     {
         chaching = GameObject.Find("purchase").GetComponent<AudioSource>();
+        SaveData.Load(purchaseID, gameObject);
     }
     
     public void Moners()
@@ -27,7 +29,7 @@ public class Buy : MonoBehaviour
             purchased = true;
             chaching.Play();
             bought.gameObject.SetActive(true);
-
+            SaveData.Purchased(purchaseID);
             SaveData.Save();
             gameObject.SetActive(false);
         }
