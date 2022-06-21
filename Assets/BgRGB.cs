@@ -28,7 +28,7 @@ public class BgRGB : MonoBehaviour
         if (effect)
         {
             Color.RGBToHSV(cam.backgroundColor, out hue, out sat, out bri);
-            hue += rainbowSpeed / 10000;
+            hue += rainbowSpeed * Time.deltaTime / 50;
             if (hue >= 1)
             {
                 hue = 0;

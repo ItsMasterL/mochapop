@@ -5,7 +5,7 @@ using UnityEngine;
 public class Buy : MonoBehaviour
 {
     public GameObject mocha;
-    bool purchased = false;
+    public bool purchased = false;
     AudioSource chaching;
 
     public int price;
@@ -14,8 +14,9 @@ public class Buy : MonoBehaviour
     public int purchaseID;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        Debug.Log("NotLoading");
         chaching = GameObject.Find("purchase").GetComponent<AudioSource>();
         SaveData.Load(purchaseID, gameObject);
     }
@@ -32,6 +33,28 @@ public class Buy : MonoBehaviour
             SaveData.Purchased(purchaseID);
             SaveData.Save();
             gameObject.SetActive(false);
+        }
+    }
+
+    public void Undone()
+    {
+        purchased = false;
+        bought.gameObject.SetActive(false);
+        gameObject.SetActive(true);
+    }
+
+    private void OnEnable()
+    {
+        if (GameObject.Find("------Shop").GetComponent<SetGroup>().Done)
+        {
+            if (purchased == true)
+            {
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                bought.SetActive(false);
+            }
         }
     }
 }

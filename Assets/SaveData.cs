@@ -17,6 +17,7 @@ public class SaveData : MonoBehaviour
     
     void Awake()
     {
+        Debug.Log("Loading");
         if (PlayerPrefs.HasKey("uTimer"))
         {
             unlockTimer = PlayerPrefs.GetInt("uTimer") == 1 ? true : false;
@@ -41,6 +42,9 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.SetInt("uRGB", 0);
         PlayerPrefs.SetInt("uSilence", 0);
 
+        achievement1 = false;
+        achievement2 = false;
+        achievement3 = false;
         PlayerPrefs.SetInt("a1", 0);
         PlayerPrefs.SetInt("a2", 0);
         PlayerPrefs.SetInt("a3", 0);
@@ -57,29 +61,25 @@ public class SaveData : MonoBehaviour
             case 0:
                 if (unlockTimer)
                 {
-                    obj.SetActive(false);
-                    obj.GetComponent<Buy>().bought.SetActive(true);
+                    obj.GetComponent<Buy>().purchased = true;
                 }
                 break;
             case 1:
                 if (unlockSpeed)
                 {
-                    obj.SetActive(false);
-                    obj.GetComponent<Buy>().bought.SetActive(true);
+                    obj.GetComponent<Buy>().purchased = true;
                 }
                 break;
             case 2:
                 if (unlockRGB)
                 {
-                    obj.SetActive(false);
-                    obj.GetComponent<Buy>().bought.SetActive(true);
+                    obj.GetComponent<Buy>().purchased = true;
                 }
                 break;
             case 3:
                 if (unlockSilence)
                 {
-                    obj.SetActive(false);
-                    obj.GetComponent<Buy>().bought.SetActive(true);
+                    obj.GetComponent<Buy>().purchased = true;
                 }
                 break;
         }

@@ -23,6 +23,9 @@ public class RewardReveal : MonoBehaviour
                 if (SaveData.achievement1)
                 {
                     text.text = "Reward: Blushy Costume";
+                } else
+                {
+                    text.text = "Reward: ???";
                 }
                 break;
             case 2:
@@ -30,11 +33,19 @@ public class RewardReveal : MonoBehaviour
                 {
                     text.text = "Reward: Cool Shades";
                 }
+                else
+                {
+                    text.text = "Reward: ???";
+                }
                 break;
             case 3:
                 if (SaveData.achievement3)
                 {
                     text.text = "Reward: Early Colors";
+                }
+                else
+                {
+                    text.text = "Reward: ???";
                 }
                 break;
         }

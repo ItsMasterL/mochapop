@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Snout
+  - UI.Constant
+  - UI.Normal
+  - UI.Shop
+  - UI.Achievements
   layers:
   - Default
   - TransparentFX
@@ -15,7 +19,7 @@ TagManager:
   - 
   - 
   - Snout
-  - 
+  - Reset
   - 
   - 
   - 

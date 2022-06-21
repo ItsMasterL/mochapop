@@ -105,8 +105,8 @@ public class Pop : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
-
-        if (popcount >= 10000 && !SaveData.achievement2)
+        //Top Popper 5K
+        if (popcount >= 5000 && !SaveData.achievement2)
         {
             GameObject.Find("Achievement").GetComponent<Achievement>().alpha = 5;
             GameObject.Find("Achievement").GetComponent<AudioSource>().Play();

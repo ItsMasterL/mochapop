@@ -15,7 +15,7 @@ public class AllPurchased : MonoBehaviour
             e = 0;
             foreach(GameObject obj in purchases)
             {
-                if (obj.activeSelf == true)
+                if (obj.GetComponent<Buy>().purchased == true)
                 {
                     e += 1;
                 }

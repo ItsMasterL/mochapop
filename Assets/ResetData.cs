@@ -5,6 +5,7 @@ using UnityEngine;
 public class ResetData : MonoBehaviour
 {
     float fivesec = 5;
+    public List<GameObject> purchasables;
 
     // Update is called once per frame
     void Update()
@@ -16,7 +17,6 @@ public class ResetData : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane));
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             hitInfo = Physics2D.Raycast(mousePos2D, Vector2.zero, 100000, layer_mask);
-
             if (hitInfo.collider != null)
             {
                 fivesec -= Time.deltaTime;
@@ -29,6 +29,11 @@ public class ResetData : MonoBehaviour
         if (fivesec <= 0)
         {
             SaveData.Reset();
+            GameObject.Find("DataReset").GetComponent<Achievement>().alpha = 5;
+            foreach (GameObject i in purchasables)
+            {
+                GetComponent<Buy>().Undone();
+            }
             fivesec = 100000000;
         }
     }
