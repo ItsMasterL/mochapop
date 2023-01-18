@@ -10,9 +10,11 @@ public class Pop : MonoBehaviour
     public int popcount = 0;
     public bool canPop = true;
     public bool makesNoise = true;
+    public bool noiseVariation = true;
     public bool isAndroid = false;
 
     public GameObject Events;
+    public GameObject Discord;
 
     public RectTransform boopZone;
 
@@ -52,6 +54,7 @@ public class Pop : MonoBehaviour
                 break;
         }
         SaveData.costume = index;
+        Discord.GetComponent<Status>().changeImage(index);
         SaveData.Save();
         anim.Play(popClose);
     }
@@ -74,6 +77,13 @@ public class Pop : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) || (isAndroid == true && Input.GetMouseButtonDown(0)))
             {
                 anim.Play(popOpen);
+                if (noiseVariation)
+                {
+                    pop.pitch = Random.Range(0.95f, 1.05f);
+                } else
+                {
+                    pop.pitch = 1;
+                }
                 if (makesNoise) pop.Play();
                 popcount += 1;
                 if (Events.GetComponent<TenTimer>().isActive == true)

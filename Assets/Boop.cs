@@ -21,6 +21,9 @@ public class Boop : MonoBehaviour
                 GameObject.Find("Achievement").GetComponent<AudioSource>().Play();
                 SaveData.Achieved(1);
                 SaveData.Save();
+
+                if (SaveData.costume == 0)
+                GameObject.Find("Mocha").GetComponent<Pop>().Costume(1);
             }
         }
     }
