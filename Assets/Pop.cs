@@ -30,6 +30,7 @@ public class Pop : MonoBehaviour
             isAndroid = true;
         }
         Costume(SaveData.costume);
+        if (SaveData.unlockBank) popcount = SaveData.savedPops;
     }
 
     public void Costume(int index)
@@ -86,6 +87,11 @@ public class Pop : MonoBehaviour
                 }
                 if (makesNoise) pop.Play();
                 popcount += 1;
+                if (SaveData.unlockBank)
+                {
+                    SaveData.savedPops += 1;
+                    SaveData.PopSave();
+                }
                 if (Events.GetComponent<TenTimer>().isActive == true)
                 {
                     Events.GetComponent<TenTimer>().popcounttimed += 1;

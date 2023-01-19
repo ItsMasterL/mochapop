@@ -15,6 +15,9 @@ public class SaveData : MonoBehaviour
     public static bool achievement3;
     
     public static int costume;
+    public static int savedPops;
+
+    public static bool defaultRGB;
     
     void Awake()
     {
@@ -37,6 +40,9 @@ public class SaveData : MonoBehaviour
             achievement3 = PlayerPrefs.GetInt("a3") == 1 ? true : false;
 
             costume = PlayerPrefs.GetInt("costume");
+            savedPops = PlayerPrefs.GetInt("pops");
+
+            defaultRGB = PlayerPrefs.GetInt("dRGB") == 1 ? true : false;
         }
 
         Debug.Log(achievement3);
@@ -58,6 +64,9 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.SetInt("a3", 0);
 
         PlayerPrefs.SetInt("costume", 0);
+        PlayerPrefs.SetInt("pops", 0);
+
+        PlayerPrefs.SetInt("dRGB", 0);
 
         PlayerPrefs.Save();
         Load();
@@ -88,6 +97,12 @@ public class SaveData : MonoBehaviour
                 break;
             case 3:
                 if (unlockSilence)
+                {
+                    obj.GetComponent<Buy>().purchased = true;
+                }
+                break;
+            case 4:
+                if (unlockBank)
                 {
                     obj.GetComponent<Buy>().purchased = true;
                 }
@@ -146,7 +161,16 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.SetInt("a3", achievement3 ? 1 : 0);
 
         PlayerPrefs.SetInt("costume", costume);
+        PlayerPrefs.SetInt("pops", savedPops);
 
+        PlayerPrefs.SetInt("dRGB", defaultRGB ? 1 : 0);
+
+        PlayerPrefs.Save();
+    }
+
+    public static void PopSave()
+    {
+        PlayerPrefs.SetInt("pops", savedPops);
         PlayerPrefs.Save();
     }
 }

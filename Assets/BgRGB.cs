@@ -15,12 +15,15 @@ public class BgRGB : MonoBehaviour
     public void toggleEffect()
     {
         effect = !effect;
+        SaveData.defaultRGB = effect;
+        SaveData.Save();
     }
 
     private void Start()
     {
         cam = GetComponent<Camera>();
         originalColor = cam.backgroundColor;
+        effect = SaveData.defaultRGB;
     }
 
     private void Update()

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 168098961}
   - component: {fileID: 168098960}
   m_Layer: 5
-  m_Name: Buy Bank
+  m_Name: BuyBank
   m_TagString: UI.Shop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7352,6 +7352,7 @@ MonoBehaviour:
   - {fileID: 682529951}
   - {fileID: 852767967}
   - {fileID: 874745820}
+  - {fileID: 168098958}
   e: 0
 --- !u!1 &1855431914
 GameObject:
