@@ -23,10 +23,10 @@ public class Buy : MonoBehaviour
     
     public void Moners()
     {
-        int popcount = mocha.GetComponent<Pop>().popcount;
+        int popcount = Pop.popcount;
         if (popcount >= price && purchased == false)
         {
-            mocha.GetComponent<Pop>().popcount -= price;
+            Pop.popcount -= price;
             purchased = true;
             chaching.Play();
             bought.gameObject.SetActive(true);
@@ -45,6 +45,7 @@ public class Buy : MonoBehaviour
 
     private void OnEnable()
     {
+        SaveData.Load(purchaseID, gameObject);
         if (GameObject.Find("------Shop").GetComponent<SetGroup>().Done)
         {
             if (purchased == true)

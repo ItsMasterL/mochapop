@@ -28,8 +28,8 @@ public class ResetData : MonoBehaviour
 
         if (fivesec <= 0)
         {
-            SaveData.Reset();
-            GameObject.Find("DataReset").GetComponent<Achievement>().alpha = 5;
+            SaveData.ResetData();
+            GameObject.Find("DataReset").GetComponent<TextRGB>().alpha = 5;
             foreach (GameObject i in purchasables)
             {
                 GetComponent<Buy>().Undone();

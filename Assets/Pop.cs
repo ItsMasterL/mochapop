@@ -7,7 +7,8 @@ public class Pop : MonoBehaviour
     public Animator anim;
     public AudioSource pop;
     public AudioSource unpop;
-    public int popcount = 0;
+    public int debugPopcount = 0;
+    public static int popcount = 0;
     public bool canPop = true;
     public bool makesNoise = true;
     public bool noiseVariation = true;
@@ -24,6 +25,7 @@ public class Pop : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        debugPopcount = 0;
         anim = gameObject.GetComponent<Animator>();
         if (Application.platform == RuntimePlatform.Android)
         {
@@ -73,6 +75,11 @@ public class Pop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (debugPopcount != 0)
+        {
+            popcount += debugPopcount;
+            debugPopcount = 0;
+        }
         if (canPop == true) {
 
             if (Input.GetKeyDown(KeyCode.Space) || (isAndroid == true && Input.GetMouseButtonDown(0)))
@@ -124,7 +131,7 @@ public class Pop : MonoBehaviour
         //Top Popper 5K
         if (popcount >= 5000 && !SaveData.achievement2)
         {
-            GameObject.Find("Achievement").GetComponent<Achievement>().alpha = 5;
+            GameObject.Find("Achievement").GetComponent<TextRGB>().alpha = 5;
             GameObject.Find("Achievement").GetComponent<AudioSource>().Play();
             SaveData.Achieved(2);
             SaveData.Save();

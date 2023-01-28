@@ -35,7 +35,7 @@ public class Popcount : MonoBehaviour
         }
         else
         {
-            int popcount = mocha.GetComponent<Pop>().popcount;
+            int popcount = Pop.popcount;
             popscore.text = popcount.ToString();
             popscore.color = color1;
         }

@@ -15,9 +15,9 @@ public class Boop : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
             hitInfo = Physics2D.Raycast(mousePos2D, Vector2.zero, 100000, layer_mask);
 
-            if (hitInfo.collider.tag == "Snout")
+            if (hitInfo.collider != null && hitInfo.collider.tag == "Snout")
             {
-                GameObject.Find("Achievement").GetComponent<Achievement>().alpha = 5;
+                GameObject.Find("Achievement").GetComponent<TextRGB>().alpha = 5;
                 GameObject.Find("Achievement").GetComponent<AudioSource>().Play();
                 SaveData.Achieved(1);
                 SaveData.Save();

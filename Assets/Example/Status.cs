@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DiscordRichPresence;
 
 public class Status : MonoBehaviour
@@ -9,10 +10,10 @@ public class Status : MonoBehaviour
     public DiscordRpc.RichPresence presence;
     
     public int popcount;
-    public GameObject mocha;
 
     public void Start()
     {
+        DontDestroyOnLoad(gameObject);
         this.handlers = default(DiscordRpc.EventHandlers);
         DiscordRpc.Initialize("930631176195031041", ref this.handlers, true, null);
         this.handlers = default(DiscordRpc.EventHandlers);
@@ -28,17 +29,21 @@ public class Status : MonoBehaviour
 
     public void Update()
     {
-        popcount = mocha.GetComponent<Pop>().popcount;
+        popcount = Pop.popcount;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
-            this.presence.state = (popcount.ToString() + " pops");
-            DiscordRpc.UpdatePresence(ref this.presence);
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                this.presence.state = (popcount.ToString() + " pops");
+                DiscordRpc.UpdatePresence(ref this.presence);
+            }
         }
     }
 
     public void changeImage(int index)
     {
+        if (SceneManager.GetActiveScene().name == "MainScene")
         switch (index)
         {
             default:
@@ -62,5 +67,10 @@ public class Status : MonoBehaviour
                 break;
         }
         DiscordRpc.UpdatePresence(ref this.presence);
+    }
+
+    public void setTimer(int timestamp)
+    {
+        this.presence.endTimestamp = timestamp;
     }
 }

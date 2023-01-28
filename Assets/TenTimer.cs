@@ -12,6 +12,7 @@ public class TenTimer : MonoBehaviour
     public bool isActive = false;
     public GameObject mocha;
     public GameObject discord;
+    public List<GameObject> disable;
 
     // Start is called before the first frame update
     public void Initiate()
@@ -30,7 +31,14 @@ public class TenTimer : MonoBehaviour
         {
             beginTime -= Time.deltaTime;
             discord.gameObject.GetComponent<Status>().presence.details = "Popping, but with more stress";
+            System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
+            int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
+            discord.gameObject.GetComponent<Status>().presence.endTimestamp = cur_time + 10;
             DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
+            foreach (GameObject i in disable)
+            {
+                i.SetActive(false);
+            }
         }
 
         if (isActive == true && beginTime <= 0 && countdown > 0)
@@ -54,7 +62,12 @@ public class TenTimer : MonoBehaviour
             resultsTime = 3;
             popcounttimed = 0;
             discord.gameObject.GetComponent<Status>().presence.details = "Popping";
+            discord.gameObject.GetComponent<Status>().presence.endTimestamp = 0;
             DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
+            foreach (GameObject i in disable)
+            {
+                i.SetActive(true);
+            }
         }
     }
 }

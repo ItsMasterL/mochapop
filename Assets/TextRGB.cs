@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Achievement : MonoBehaviour
+public class TextRGB : MonoBehaviour
 {
     public float rainbowSpeed = 5;
-    float hue;
+    public float hue;
     public float sat = 1;
     public float bri = 1;
     TextMeshProUGUI tmp;
 
     public float alpha;
+    public bool fadeOut = true;
+    public bool outlineChange = false;
+    public float hueOffset = 0.1f;
     
     private void Start()
     {
@@ -27,8 +30,20 @@ public class Achievement : MonoBehaviour
                 hue = 0;
             }
             tmp.color = Color.HSVToRGB(hue, sat, bri);
+            if (outlineChange)
+            {
+            tmp.outlineColor = Color.HSVToRGB(hue + hueOffset, sat, bri);
+            /*if (hue + hueOffset < 1)
+            {
+            tmp.outlineColor = Color.HSVToRGB(hue + hueOffset, sat, bri);
+            } else
+            {
+            tmp.outlineColor = Color.HSVToRGB(hue - hueOffset, sat, bri);
+            }
+            */
+        }
 
-        if (alpha > 0)
+        if (alpha > 0 && fadeOut)
         {
             alpha -= Time.deltaTime;
         }

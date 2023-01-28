@@ -22,7 +22,7 @@ public class AllPurchased : MonoBehaviour
             }
             if (e == purchases.Count)
             {
-                GameObject.Find("Achievement").GetComponent<Achievement>().alpha = 5;
+                GameObject.Find("Achievement").GetComponent<TextRGB>().alpha = 5;
                 GameObject.Find("Achievement").GetComponent<AudioSource>().Play();
                 SaveData.Achieved(3);
                 SaveData.Save();
