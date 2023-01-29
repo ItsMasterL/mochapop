@@ -25,6 +25,7 @@ public class Pop : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Discord = GameObject.Find("Discordo");
         debugPopcount = 0;
         anim = gameObject.GetComponent<Animator>();
         if (Application.platform == RuntimePlatform.Android)

@@ -10,6 +10,7 @@ public class SceneChange : MonoBehaviour
     public GameObject transitionObject;
     bool transition;
     Color color;
+    GameObject Mocha;
 
     private void Awake()
     {
@@ -21,26 +22,32 @@ public class SceneChange : MonoBehaviour
         {
             transitionObject = GameObject.Find("Panel");
         }
+        Mocha = GameObject.Find("Mocha");
     }
 
     public void Transition(string scene)
     {
         if (transitionObject.GetComponent<Image>().color.a <= 0)
         {
-            if (GameObject.Find("Mocha") != null)
-            {
-                GameObject.Find("Mocha").GetComponent<Pop>().canPop = false;
-            }
             nextScene = scene;
             transition = true;
             SaveData.Save();
         }
     }
 
+    public void SetColor(bool black)
+    {
+        transitionObject.GetComponent<FadeAlpha>().fadeToBlack = black;
+    }
+
     private void Update()
     {
         if (transition == true)
         {
+            if (Mocha != null)
+            {
+                Mocha.GetComponent<Pop>().canPop = false;
+            }
             color = transitionObject.GetComponent<Image>().color;
             color.a += Time.deltaTime;
             transitionObject.GetComponent<Image>().color = color;
