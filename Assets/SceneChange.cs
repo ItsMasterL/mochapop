@@ -55,6 +55,10 @@ public class SceneChange : MonoBehaviour
             if (color.a >= 1)
             {
                 transition = false;
+                if (nextScene == "Cutscenes")
+                {
+                    GameObject.Find("StoryModeManager").GetComponent<StoryModeManager>().watchCutscene = true;
+                }
                 SceneManager.LoadScene(nextScene);
             }
         }

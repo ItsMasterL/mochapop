@@ -97,7 +97,7 @@ public class Pop : MonoBehaviour
                 popcount += 1;
                 if (SaveData.unlockBank)
                 {
-                    SaveData.savedPops += 1;
+                    SaveData.savedPops = popcount;
                     SaveData.PopSave();
                 }
                 if (Events.GetComponent<TenTimer>().isActive == true)

@@ -23,14 +23,18 @@ public class Buy : MonoBehaviour
     
     public void Moners()
     {
-        int popcount = Pop.popcount;
-        if (popcount >= price && purchased == false)
+        if (Pop.popcount >= price && purchased == false)
         {
             Pop.popcount -= price;
             purchased = true;
             chaching.Play();
             bought.gameObject.SetActive(true);
             SaveData.Purchased(purchaseID);
+            if (SaveData.unlockBank)
+            {
+                SaveData.savedPops = Pop.popcount;
+                SaveData.PopSave();
+            }
             SaveData.Save();
             gameObject.SetActive(false);
         }

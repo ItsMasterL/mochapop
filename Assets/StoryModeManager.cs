@@ -14,7 +14,6 @@ public class StoryModeManager : MonoBehaviour
     public void StartButton()
     {
         DontDestroyOnLoad(gameObject);
-        watchCutscene = true;
         Level = 0;
     }
 
@@ -23,7 +22,7 @@ public class StoryModeManager : MonoBehaviour
         switch (Level)
         {
             case 0:
-                LevelName = "";
+                LevelName = "Cutscenes";
                 break;
             case 1:
                 LevelName = "GamerBird";
@@ -42,6 +41,14 @@ public class StoryModeManager : MonoBehaviour
                     cutsceneLength = 22.47f;
                     setup = true;
                     break;
+                case 1:
+                    Debug.Log("Starting Scene");
+                    GameObject.Find("Mocha").GetComponent<Animator>().Play("M_level1", 1);
+                    GameObject.Find("Rival").GetComponent<Animator>().Play("not popGamerBird", 0);
+                    GameObject.Find("Rival").GetComponent<Animator>().Play("GB_level1", 1);
+                    cutsceneLength = 15f;
+                    setup = true;
+                    break;
             }
         }
 
@@ -51,10 +58,12 @@ public class StoryModeManager : MonoBehaviour
         }
         if (cutsceneLength <= 0 && setup == true)
         {
+            setup = false;
             if (Level == 0)
             {
                 Level++;
                 GameObject.Find("Panel").GetComponent<SceneChange>().Transition("Cutscenes");
+                watchCutscene = false;
             } else
             {
                 if (SceneUtility.GetBuildIndexByScenePath(LevelName) != -1)
@@ -62,6 +71,7 @@ public class StoryModeManager : MonoBehaviour
                     GameObject.Find("Panel").GetComponent<SceneChange>().Transition(LevelName);
                 } else
                 {
+                    Debug.LogError("Level not found!");
                     GameObject.Find("Panel").GetComponent<SceneChange>().Transition("StorySelect");
                 }
                 watchCutscene = false;
