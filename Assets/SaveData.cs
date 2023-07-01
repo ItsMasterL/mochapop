@@ -11,6 +11,8 @@ public class SaveData : MonoBehaviour
     public static bool unlockBank;
     public static bool unlockStory;
 
+    public static int storyLevel;
+
     public static bool achievement1;
     public static bool achievement2;
     public static bool achievement3;
@@ -42,6 +44,8 @@ public class SaveData : MonoBehaviour
             unlockBank = PlayerPrefs.GetInt("uBank") == 1 ? true : false;
             unlockStory = PlayerPrefs.GetInt("uStory") == 1 ? true : false;
 
+            storyLevel = PlayerPrefs.GetInt("sLevel");
+
             achievement1 = PlayerPrefs.GetInt("a1") == 1 ? true : false;
             achievement2 = PlayerPrefs.GetInt("a2") == 1 ? true : false;
             achievement3 = PlayerPrefs.GetInt("a3") == 1 ? true : false;
@@ -64,6 +68,8 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.SetInt("uSilence", 0);
         PlayerPrefs.SetInt("uBank", 0);
         PlayerPrefs.SetInt("uStory", 0);
+
+        PlayerPrefs.SetInt("sLevel", 0);
 
         achievement1 = false;
         achievement2 = false;
@@ -197,6 +203,8 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.SetInt("uSilence", unlockSilence ? 1 : 0);
         PlayerPrefs.SetInt("uBank", unlockBank ? 1 : 0);
         PlayerPrefs.SetInt("uStory", unlockStory ? 1 : 0);
+
+        PlayerPrefs.SetInt("sLevel", storyLevel);
 
         PlayerPrefs.SetInt("a1", achievement1 ? 1 : 0);
         PlayerPrefs.SetInt("a2", achievement2 ? 1 : 0);

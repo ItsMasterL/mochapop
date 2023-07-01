@@ -10,6 +10,7 @@ public class Pop : MonoBehaviour
     public int debugPopcount = 0;
     public static int popcount = 0;
     public bool canPop = true;
+    public bool AI = false;
     public bool makesNoise = true;
     public bool noiseVariation = true;
     public bool isAndroid = false;
@@ -19,21 +20,28 @@ public class Pop : MonoBehaviour
 
     public RectTransform boopZone;
 
+    [SerializeField]
     string popOpen = "pop";
+    [SerializeField]
     string popClose = "not pop";
+
+    float autopoptime;
 
     // Use this for initialization
     void Start()
     {
-        Discord = GameObject.Find("Discordo");
-        debugPopcount = 0;
         anim = gameObject.GetComponent<Animator>();
-        if (Application.platform == RuntimePlatform.Android)
+        if (!AI)
         {
-            isAndroid = true;
+            Discord = GameObject.Find("Discordo");
+            debugPopcount = 0;
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                isAndroid = true;
+            }
+            Costume(SaveData.costume);
+            if (SaveData.unlockBank) popcount = SaveData.savedPops;
         }
-        Costume(SaveData.costume);
-        if (SaveData.unlockBank) popcount = SaveData.savedPops;
     }
 
     public void Costume(int index)
@@ -58,7 +66,7 @@ public class Pop : MonoBehaviour
                 break;
         }
         SaveData.costume = index;
-        Discord.GetComponent<Status>().changeImage(index);
+        if (!isAndroid) Discord.GetComponent<Status>().changeImage(index);
         SaveData.Save();
         anim.Play(popClose);
     }
@@ -76,6 +84,15 @@ public class Pop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (autopoptime > 0)
+        {
+            autopoptime -= Time.deltaTime;
+        }
+        else if (autopoptime < 0)
+        {
+            autopoptime = 0;
+            ClosePop();
+        }
         if (debugPopcount != 0)
         {
             popcount += debugPopcount;
@@ -85,46 +102,18 @@ public class Pop : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) || (isAndroid == true && Input.GetMouseButtonDown(0)))
             {
-                anim.Play(popOpen);
-                if (noiseVariation)
-                {
-                    pop.pitch = Random.Range(0.95f, 1.05f);
-                } else
-                {
-                    pop.pitch = 1;
-                }
-                if (makesNoise) pop.Play();
-                popcount += 1;
-                if (SaveData.unlockBank)
-                {
-                    SaveData.savedPops = popcount;
-                    SaveData.PopSave();
-                }
-                if (Events.GetComponent<TenTimer>().isActive == true)
-                {
-                    Events.GetComponent<TenTimer>().popcounttimed += 1;
-                }
-                if (Events.GetComponent<SpeedTimer>().isActive == true)
-                {
-                    Events.GetComponent<SpeedTimer>().popcounted += 1;
-                }
-                Debug.Log(boopZone.transform.localPosition);
-                boopZone.anchoredPosition = new Vector3(10.5f, 6.03f, 0);
+                OpenPop();
             }
 
             if (Input.GetKeyUp(KeyCode.Space) || (isAndroid == true && Input.GetMouseButtonUp(0)))
             {
-                anim.Play(popClose);
-                if (makesNoise) unpop.Play();
-                boopZone.anchoredPosition = new Vector3(10.8f, 3.63f, 0);
+                ClosePop();
             }
         }
 
         if (canPop == false && anim.GetCurrentAnimatorStateInfo(0).IsName(popOpen))
         {
-            anim.Play(popClose);
-            if (makesNoise) unpop.Play();
-            boopZone.anchoredPosition = new Vector3(10.8f, 3.63f, 0);
+            ClosePop();
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -136,6 +125,68 @@ public class Pop : MonoBehaviour
             GameObject.Find("Achievement").GetComponent<AudioSource>().Play();
             SaveData.Achieved(2);
             SaveData.Save();
+        }
+
+        
+    }
+    public void OpenPop()
+    {
+        anim.Play(popOpen);
+        if (noiseVariation)
+        {
+            pop.pitch = Random.Range(0.95f, 1.05f);
+        }
+        else
+        {
+            pop.pitch = 1;
+        }
+        if (makesNoise) pop.Play();
+        popcount += 1;
+        if (SaveData.unlockBank)
+        {
+            SaveData.savedPops = popcount;
+            SaveData.PopSave();
+        }
+        if (Events != null)
+        {
+            if (Events.GetComponent<TenTimer>().isActive == true)
+            {
+                Events.GetComponent<TenTimer>().popcounttimed += 1;
+            }
+            if (Events.GetComponent<SpeedTimer>().isActive == true)
+            {
+                Events.GetComponent<SpeedTimer>().popcounted += 1;
+            }
+        }
+        if (boopZone != null)
+        {
+            Debug.Log(boopZone.transform.localPosition);
+            boopZone.anchoredPosition = new Vector3(10.5f, 6.03f, 0);
+        }
+    }
+    public void OpenPop(float time)
+    {
+        autopoptime = time;
+        anim.Play(popOpen);
+        if (noiseVariation)
+        {
+            pop.pitch = Random.Range(0.95f, 1.05f);
+        }
+        else
+        {
+            pop.pitch = 1;
+        }
+        if (makesNoise) pop.Play();
+        popcount += 1;
+    }
+
+    public void ClosePop()
+    {
+        if (autopoptime == 0)
+        {
+            anim.Play(popClose);
+            if (makesNoise) unpop.Play();
+            boopZone.anchoredPosition = new Vector3(10.8f, 3.63f, 0);
         }
     }
 }

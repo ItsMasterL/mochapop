@@ -20,10 +20,4 @@ public class CheckPlatform : MonoBehaviour
             text.text = "Tap screen to pop!";
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

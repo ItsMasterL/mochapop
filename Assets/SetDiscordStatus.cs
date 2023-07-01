@@ -13,7 +13,7 @@ public class SetDiscordStatus : MonoBehaviour
     void Start()
     {
         discord = GameObject.Find("Discordo").GetComponent<Status>();
-        if (onAwake)
+        if (onAwake && Application.platform != RuntimePlatform.Android)
         {
             UpdateStatus();
         }
@@ -21,15 +21,21 @@ public class SetDiscordStatus : MonoBehaviour
 
     public void UpdateStatus()
     {
-        discord.presence.details = SetDetails;
-        discord.presence.state = SetStatus;
-        DiscordRpc.UpdatePresence(ref discord.presence);
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            discord.presence.details = SetDetails;
+            discord.presence.state = SetStatus;
+            DiscordRpc.UpdatePresence(ref discord.presence);
+        }
     }
 
     public void UpdateStatus(string details, string status)
     {
-        discord.presence.details = details;
-        discord.presence.state = status;
-        DiscordRpc.UpdatePresence(ref discord.presence);
+        if (Application.platform != RuntimePlatform.Android)
+        {
+            discord.presence.details = details;
+            discord.presence.state = status;
+            DiscordRpc.UpdatePresence(ref discord.presence);
+        }
     }
 }

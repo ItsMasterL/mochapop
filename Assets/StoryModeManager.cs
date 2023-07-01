@@ -27,10 +27,15 @@ public class StoryModeManager : MonoBehaviour
             case 1:
                 LevelName = "GamerBird";
                 break;
+            case 2:
+                LevelName = "PatientCroc";
+                break;
         }
 
         if (SceneManager.GetActiveScene().name == "Cutscenes" && watchCutscene == true && setup == false)
         {
+            SaveData.storyLevel = Level;
+            SaveData.Save();
             //GameObject.Find("Mocha").GetComponent<Pop>().Costume(SaveData.costume);
             switch (Level)
             {
@@ -49,6 +54,13 @@ public class StoryModeManager : MonoBehaviour
                     cutsceneLength = 15f;
                     setup = true;
                     break;
+                case 2:
+                    Debug.Log("Starting Scene");
+                    GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro", 1);
+                    GameObject.Find("mochapopTragedy").GetComponent<AudioSource>().Play();
+                    cutsceneLength = 22.47f;
+                    setup = true;
+                    break;
             }
         }
 
@@ -62,6 +74,8 @@ public class StoryModeManager : MonoBehaviour
             if (Level == 0)
             {
                 Level++;
+                SaveData.storyLevel = Level;
+                SaveData.Save();
                 GameObject.Find("Panel").GetComponent<SceneChange>().Transition("Cutscenes");
                 watchCutscene = false;
             } else

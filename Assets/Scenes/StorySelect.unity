@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 86557087}
   - component: {fileID: 86557086}
   - component: {fileID: 86557085}
+  - component: {fileID: 86557088}
   m_Layer: 5
   m_Name: Level1
   m_TagString: UI.Shop
@@ -488,11 +489,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 86557086}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86557088}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &86557086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,6 +564,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86557083}
   m_CullTransparentMesh: 0
+--- !u!114 &86557088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86557083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
+  lvlname: Gamer Bird
 --- !u!1 &97723571
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +720,7 @@ GameObject:
   - component: {fileID: 122911103}
   - component: {fileID: 122911102}
   - component: {fileID: 122911101}
+  - component: {fileID: 122911104}
   m_Layer: 5
   m_Name: Level2
   m_TagString: UI.Shop
@@ -737,11 +786,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 122911102}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 122911104}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &122911102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,6 +861,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122911099}
   m_CullTransparentMesh: 0
+--- !u!114 &122911104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122911099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  lvlname: Patient Croc
 --- !u!1 &255164852
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,6 +887,7 @@ GameObject:
   - component: {fileID: 255164856}
   - component: {fileID: 255164855}
   - component: {fileID: 255164854}
+  - component: {fileID: 255164857}
   m_Layer: 5
   m_Name: Level8
   m_TagString: UI.Shop
@@ -856,11 +953,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 255164855}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 255164857}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &255164855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,6 +1028,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 255164852}
   m_CullTransparentMesh: 0
+--- !u!114 &255164857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255164852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8
+  lvlname: Quite Precise Pile of Debris
 --- !u!1 &262936545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1386,7 @@ GameObject:
   - component: {fileID: 468290738}
   - component: {fileID: 468290737}
   - component: {fileID: 468290736}
+  - component: {fileID: 468290739}
   m_Layer: 5
   m_Name: Level7
   m_TagString: UI.Shop
@@ -1307,11 +1452,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 468290737}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 468290739}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &468290737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1349,6 +1527,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468290734}
   m_CullTransparentMesh: 0
+--- !u!114 &468290739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468290734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 7
+  lvlname: Manic Raccoon
 --- !u!1 &521925257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,6 +2908,7 @@ GameObject:
   - component: {fileID: 1160273767}
   - component: {fileID: 1160273766}
   - component: {fileID: 1160273765}
+  - component: {fileID: 1160273768}
   m_Layer: 5
   m_Name: Level4
   m_TagString: UI.Shop
@@ -2781,11 +2974,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1160273766}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1160273768}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1160273766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2823,6 +3049,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160273763}
   m_CullTransparentMesh: 0
+--- !u!114 &1160273768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160273763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  lvlname: Slick Brick
 --- !u!1 &1267411209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,6 +3349,7 @@ GameObject:
   - component: {fileID: 1518987029}
   - component: {fileID: 1518987028}
   - component: {fileID: 1518987027}
+  - component: {fileID: 1518987030}
   m_Layer: 5
   m_Name: Level10
   m_TagString: UI.Shop
@@ -3174,11 +3415,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1518987028}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1518987030}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1518987028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3216,6 +3490,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518987025}
   m_CullTransparentMesh: 0
+--- !u!114 &1518987030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518987025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 10
+  lvlname: Mirror Mocha
 --- !u!1 &1529972805
 GameObject:
   m_ObjectHideFlags: 0
@@ -3627,6 +3915,7 @@ GameObject:
   - component: {fileID: 1773044589}
   - component: {fileID: 1773044588}
   - component: {fileID: 1773044587}
+  - component: {fileID: 1773044590}
   m_Layer: 5
   m_Name: Level6
   m_TagString: UI.Shop
@@ -3692,11 +3981,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1773044588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1773044590}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1773044588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3734,6 +4056,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773044585}
   m_CullTransparentMesh: 0
+--- !u!114 &1773044590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773044585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 6
+  lvlname: Very Safe Wolf
 --- !u!1 &1894931575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,6 +4439,7 @@ GameObject:
   - component: {fileID: 2051699271}
   - component: {fileID: 2051699270}
   - component: {fileID: 2051699269}
+  - component: {fileID: 2051699272}
   m_Layer: 5
   m_Name: Level9
   m_TagString: UI.Shop
@@ -4168,11 +4505,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2051699270}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2051699272}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2051699270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4210,6 +4580,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2051699267}
   m_CullTransparentMesh: 0
+--- !u!114 &2051699272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051699267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 9
+  lvlname: Drowsy Hedgehog
 --- !u!1 &2056096362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4222,6 +4606,7 @@ GameObject:
   - component: {fileID: 2056096366}
   - component: {fileID: 2056096365}
   - component: {fileID: 2056096364}
+  - component: {fileID: 2056096367}
   m_Layer: 5
   m_Name: Continue
   m_TagString: UI.Normal
@@ -4291,7 +4676,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2056096365}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1060984242}
+        m_MethodName: Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 47434702}
+        m_MethodName: Toggle
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2056096365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4329,6 +4736,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056096362}
   m_CullTransparentMesh: 0
+--- !u!114 &2056096367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056096362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4053da86d3420e489654908d8152704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2082062036
 GameObject:
   m_ObjectHideFlags: 0
@@ -4341,6 +4760,7 @@ GameObject:
   - component: {fileID: 2082062040}
   - component: {fileID: 2082062039}
   - component: {fileID: 2082062038}
+  - component: {fileID: 2082062041}
   m_Layer: 5
   m_Name: Level5
   m_TagString: UI.Shop
@@ -4406,11 +4826,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2082062039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2082062041}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2082062039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4448,6 +4901,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2082062036}
   m_CullTransparentMesh: 0
+--- !u!114 &2082062041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082062036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5
+  lvlname: DJ Capybara
 --- !u!1 &2115098327
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,6 +4927,7 @@ GameObject:
   - component: {fileID: 2115098331}
   - component: {fileID: 2115098330}
   - component: {fileID: 2115098329}
+  - component: {fileID: 2115098332}
   m_Layer: 5
   m_Name: Level3
   m_TagString: UI.Shop
@@ -4525,11 +4993,44 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 2115098330}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2115098332}
+        m_MethodName: Clicky
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: SetColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 27476907}
+        m_MethodName: Transition
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cutscenes
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2115098330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4567,3 +5068,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115098327}
   m_CullTransparentMesh: 0
+--- !u!114 &2115098332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115098327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb4f123051e3f940a5d757794ea1eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3
+  lvlname: Clumsy Ferret

@@ -13,13 +13,16 @@ public class SlideToTheLeft : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
-        if (tpPos != null && transform.position.x <= float.Parse(tpPos) && !randomizeHeight)
+        if (tpPos != null || tpPos != "")
         {
-            transform.position = new Vector3(tpTo, transform.position.y, transform.position.z);
-        }
-        else if (tpPos != null && transform.position.x <= float.Parse(tpPos) && randomizeHeight)
-        {
-            transform.position = new Vector3(tpTo, Random.Range(-2.5f,2.75f), transform.position.z);
+            if (transform.position.x <= float.Parse(tpPos) && !randomizeHeight)
+            {
+                transform.position = new Vector3(tpTo, transform.position.y, transform.position.z);
+            }
+            else if (transform.position.x <= float.Parse(tpPos) && randomizeHeight)
+            {
+                transform.position = new Vector3(tpTo, Random.Range(-2.5f, 2.75f), transform.position.z);
+            }
         }
     }
 }
