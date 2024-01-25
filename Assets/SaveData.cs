@@ -16,6 +16,16 @@ public class SaveData : MonoBehaviour
     public static bool achievement1;
     public static bool achievement2;
     public static bool achievement3;
+
+    public static bool code1;
+    public static bool code2;
+    public static bool code3;
+    public static bool code4;
+    public static bool code5;
+    public static bool code6;
+    public static bool code7;
+    public static bool code8;
+    public static bool code9;
     
     public static int costume;
     public static int savedPops;
@@ -50,6 +60,16 @@ public class SaveData : MonoBehaviour
             achievement2 = PlayerPrefs.GetInt("a2") == 1 ? true : false;
             achievement3 = PlayerPrefs.GetInt("a3") == 1 ? true : false;
 
+            code1 = PlayerPrefs.GetInt("c1") == 1 ? true : false;
+            code2 = PlayerPrefs.GetInt("c2") == 1 ? true : false;
+            code3 = PlayerPrefs.GetInt("c3") == 1 ? true : false;
+            code4 = PlayerPrefs.GetInt("c4") == 1 ? true : false;
+            code5 = PlayerPrefs.GetInt("c5") == 1 ? true : false;
+            code6 = PlayerPrefs.GetInt("c6") == 1 ? true : false;
+            code7 = PlayerPrefs.GetInt("c7") == 1 ? true : false;
+            code8 = PlayerPrefs.GetInt("c8") == 1 ? true : false;
+            code9 = PlayerPrefs.GetInt("c9") == 1 ? true : false;
+
             costume = PlayerPrefs.GetInt("costume");
             savedPops = PlayerPrefs.GetInt("pops");
 
@@ -77,6 +97,24 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.SetInt("a1", 0);
         PlayerPrefs.SetInt("a2", 0);
         PlayerPrefs.SetInt("a3", 0);
+        code1 = false;
+        code2 = false;
+        code3 = false;
+        code4 = false;
+        code5 = false;
+        code6 = false;
+        code7 = false;
+        code8 = false;
+        code9 = false;
+        PlayerPrefs.SetInt("c1", 0);
+        PlayerPrefs.SetInt("c2", 0);
+        PlayerPrefs.SetInt("c3", 0);
+        PlayerPrefs.SetInt("c4", 0);
+        PlayerPrefs.SetInt("c5", 0);
+        PlayerPrefs.SetInt("c6", 0);
+        PlayerPrefs.SetInt("c7", 0);
+        PlayerPrefs.SetInt("c8", 0);
+        PlayerPrefs.SetInt("c9", 0);
 
         PlayerPrefs.SetInt("costume", 0);
         PlayerPrefs.SetInt("pops", 0);
@@ -194,6 +232,40 @@ public class SaveData : MonoBehaviour
                 break;
         }
     }
+
+    public static void Unlocked(int id)
+    {
+        switch (id)
+        {
+            case 1:
+                code1 = true;
+                break;
+            case 2:
+                code2 = true;
+                break;
+            case 3:
+                code3 = true;
+                break;
+            case 4:
+                code4 = true;
+                break;
+            case 5:
+                code5 = true;
+                break;
+            case 6:
+                code6 = true;
+                break;
+            case 7:
+                code7 = true;
+                break;
+            case 8:
+                code8 = true;
+                break;
+            case 9:
+                code9 = true;
+                break;
+        }
+    }
     
     public static void Save()
     {
@@ -210,6 +282,16 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.SetInt("a2", achievement2 ? 1 : 0);
         PlayerPrefs.SetInt("a3", achievement3 ? 1 : 0);
 
+        PlayerPrefs.SetInt("c1", code1 ? 1 : 0);
+        PlayerPrefs.SetInt("c2", code2 ? 1 : 0);
+        PlayerPrefs.SetInt("c3", code3 ? 1 : 0);
+        PlayerPrefs.SetInt("c4", code4 ? 1 : 0);
+        PlayerPrefs.SetInt("c5", code5 ? 1 : 0);
+        PlayerPrefs.SetInt("c6", code6 ? 1 : 0);
+        PlayerPrefs.SetInt("c7", code7 ? 1 : 0);
+        PlayerPrefs.SetInt("c8", code8 ? 1 : 0);
+        PlayerPrefs.SetInt("c9", code9 ? 1 : 0);
+
         PlayerPrefs.SetInt("costume", costume);
         PlayerPrefs.SetInt("pops", savedPops);
 
@@ -218,9 +300,15 @@ public class SaveData : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public static void PopSave()
+    public static void Save(string key, int value)
     {
-        PlayerPrefs.SetInt("pops", savedPops);
+        PlayerPrefs.SetInt(key, value);
+        PlayerPrefs.Save();
+    }
+
+    public static void Save(string key, bool value)
+    {
+        PlayerPrefs.SetInt(key, value ? 1 : 0);
         PlayerPrefs.Save();
     }
 }

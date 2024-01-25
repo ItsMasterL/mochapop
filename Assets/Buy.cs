@@ -33,7 +33,7 @@ public class Buy : MonoBehaviour
             if (SaveData.unlockBank)
             {
                 SaveData.savedPops = Pop.popcount;
-                SaveData.PopSave();
+                SaveData.Save("pops", SaveData.savedPops);
             }
             SaveData.Save();
             gameObject.SetActive(false);

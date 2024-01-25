@@ -505,28 +505,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &86557086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   lvlname: Gamer Bird
+  lvlscene: 
 --- !u!1 &97723571
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,28 +781,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &122911102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,6 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   lvlname: Patient Croc
+  lvlscene: 
 --- !u!1 &255164852
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,28 +927,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &255164855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,6 +978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 8
   lvlname: Quite Precise Pile of Debris
+  lvlscene: 
 --- !u!1 &262936545
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,28 +1405,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &468290737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,6 +1456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   lvlname: Manic Raccoon
+  lvlscene: 
 --- !u!1 &521925257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2990,28 +2906,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1160273766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3063,6 +2957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   lvlname: Slick Brick
+  lvlscene: 
 --- !u!1 &1267411209
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,28 +3326,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1518987028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3504,6 +3377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 10
   lvlname: Mirror Mocha
+  lvlscene: 
 --- !u!1 &1529972805
 GameObject:
   m_ObjectHideFlags: 0
@@ -3997,28 +3871,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1773044588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4070,6 +3922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   lvlname: Very Safe Wolf
+  lvlscene: 
 --- !u!1 &1894931575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4521,28 +4374,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2051699270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4594,6 +4425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 9
   lvlname: Drowsy Hedgehog
+  lvlscene: 
 --- !u!1 &2056096362
 GameObject:
   m_ObjectHideFlags: 0
@@ -4842,28 +4674,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2082062039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4915,6 +4725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   lvlname: DJ Capybara
+  lvlscene: 
 --- !u!1 &2115098327
 GameObject:
   m_ObjectHideFlags: 0
@@ -5009,28 +4820,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: SetColor
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 27476907}
-        m_MethodName: Transition
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Cutscenes
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2115098330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5082,3 +4871,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   lvlname: Clumsy Ferret
+  lvlscene: 

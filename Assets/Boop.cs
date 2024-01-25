@@ -17,11 +17,7 @@ public class Boop : MonoBehaviour
 
             if (hitInfo.collider != null && hitInfo.collider.tag == "Snout")
             {
-                GameObject.Find("Achievement").GetComponent<TextRGB>().alpha = 5;
-                GameObject.Find("Achievement").GetComponent<AudioSource>().Play();
-                SaveData.Achieved(1);
-                SaveData.Save();
-
+                GameObject.Find("Achievement").GetComponent<Achievements>().Achievement(1);
                 if (SaveData.costume == 0)
                 GameObject.Find("Mocha").GetComponent<Pop>().Costume(1);
             }

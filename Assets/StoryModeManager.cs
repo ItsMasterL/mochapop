@@ -34,8 +34,11 @@ public class StoryModeManager : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "Cutscenes" && watchCutscene == true && setup == false)
         {
-            SaveData.storyLevel = Level;
-            SaveData.Save();
+            if (SaveData.storyLevel < Level)
+            {
+                SaveData.storyLevel = Level;
+                SaveData.Save("sLevel", SaveData.storyLevel);
+            }
             //GameObject.Find("Mocha").GetComponent<Pop>().Costume(SaveData.costume);
             switch (Level)
             {
@@ -74,8 +77,12 @@ public class StoryModeManager : MonoBehaviour
             if (Level == 0)
             {
                 Level++;
-                SaveData.storyLevel = Level;
-                SaveData.Save();
+                Debug.Log(Level);
+                if (SaveData.storyLevel < Level)
+                {
+                    SaveData.storyLevel = Level;
+                    SaveData.Save("sLevel", SaveData.storyLevel);
+                }
                 GameObject.Find("Panel").GetComponent<SceneChange>().Transition("Cutscenes");
                 watchCutscene = false;
             } else

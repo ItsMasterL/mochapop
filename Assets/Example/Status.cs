@@ -13,13 +13,14 @@ public class Status : MonoBehaviour
 
     public void Start()
     {
+        popcount = Pop.popcount;
         DontDestroyOnLoad(gameObject);
         this.handlers = default(DiscordRpc.EventHandlers);
         DiscordRpc.Initialize("930631176195031041", ref this.handlers, true, null);
         this.handlers = default(DiscordRpc.EventHandlers);
         DiscordRpc.Initialize("930631176195031041", ref this.handlers, true, null);
         this.presence.details = "Popping";
-        this.presence.state = "0 pops";
+        this.presence.state = popcount.ToString() + " pops";
         this.presence.largeImageKey = "open";
         this.presence.smallImageKey = "";
         this.presence.largeImageText = "look its mocha pop";
@@ -35,7 +36,7 @@ public class Status : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                this.presence.state = (popcount.ToString() + " pops");
+                this.presence.state = ((popcount+1).ToString() + " pops");
                 DiscordRpc.UpdatePresence(ref this.presence);
             }
         }

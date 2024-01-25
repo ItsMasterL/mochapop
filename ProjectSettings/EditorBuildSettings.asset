@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamerBird.unity
     guid: 2d0c5c7b7a75a70408e46ebd09c0aabb
+  - enabled: 1
+    path: Assets/Scenes/PatientCroc.unity
+    guid: 84a7e1d1375372942a4b1a54d84340f5
   m_configObjects: {}

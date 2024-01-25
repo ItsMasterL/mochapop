@@ -9,6 +9,8 @@ TagManager:
   - UI.Normal
   - UI.Shop
   - UI.Achievements
+  - UI.Achievements1
+  - UI.Achievements2
   layers:
   - Default
   - TransparentFX

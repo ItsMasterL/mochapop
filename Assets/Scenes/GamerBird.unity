@@ -2375,6 +2375,7 @@ MonoBehaviour:
   boopZone: {fileID: 0}
   popOpen: pop
   popClose: not pop
+  sad: sad
 --- !u!95 &1088206204
 Animator:
   serializedVersion: 3
@@ -2433,12 +2434,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: bea814fd6e622d44fa56fc67b9157fc1, type: 3}
+  m_Sprite: {fileID: 9095853184155359625, guid: bea814fd6e622d44fa56fc67b9157fc1,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 16}
+  m_Size: {x: 16.003908, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2496,8 +2498,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 16}
-    newSize: {x: 16, y: 16}
+    oldSize: {x: 16.003908, y: 16}
+    newSize: {x: 16.003908, y: 16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -2518,6 +2520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoJump: 0
+  hasFatigue: 0
   fatigue: 0.1
   moners:
   - {fileID: 686574222}
@@ -3032,8 +3035,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 16}
-    newSize: {x: 16, y: 16}
+    oldSize: {x: 16.003908, y: 16}
+    newSize: {x: 16.003908, y: 16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3054,6 +3057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoJump: 1
+  hasFatigue: 1
   fatigue: 0.1
   moners:
   - {fileID: 686574222}
@@ -3088,6 +3092,7 @@ MonoBehaviour:
   boopZone: {fileID: 0}
   popOpen: popGamerBird
   popClose: not popGamerBird
+  sad: sad
 --- !u!95 &1314714973
 Animator:
   serializedVersion: 3
@@ -3146,12 +3151,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: bea814fd6e622d44fa56fc67b9157fc1, type: 3}
+  m_Sprite: {fileID: -4849916617169445125, guid: 633d22a024ef22a4db426d6d568aa29f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 16}
+  m_Size: {x: 16.003908, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

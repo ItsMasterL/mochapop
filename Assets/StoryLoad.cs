@@ -10,7 +10,7 @@ public class StoryLoad : MonoBehaviour
     void Start()
     {
         btn = GetComponent<Button>();
-
+        Debug.Log(SaveData.storyLevel);
         if (SaveData.storyLevel != 0)
         {
             btn.interactable = true;

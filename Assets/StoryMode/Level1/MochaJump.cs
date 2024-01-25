@@ -7,6 +7,7 @@ public class MochaJump : MonoBehaviour
 {
     public bool autoJump;
     float autoCooldown;
+    public bool hasFatigue;
     public float fatigue = 0.1f;
     float living;
     public List<GameObject> moners;
@@ -18,8 +19,11 @@ public class MochaJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        living += Time.deltaTime;
-        fatigue = 0.1f * Mathf.Floor(living/15) + 0.1f;
+        if (hasFatigue)
+        {
+            living += Time.deltaTime;
+            fatigue = 0.1f * Mathf.Floor(living / 15) + 0.1f;
+        }
         if (GetComponent<Pop>().canPop)
         {
             if (Input.GetKeyDown(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonDown(0)))
@@ -34,8 +38,12 @@ public class MochaJump : MonoBehaviour
         if (transform.position.y < -100 && autoJump)
         {
             GameObject.Find("StoryModeManager").GetComponent<StoryModeManager>().Level = 2;
-            SaveData.storyLevel = 2;
-            SaveData.Save();
+            GameObject.Find("StoryModeManager").GetComponent<StoryModeManager>().watchCutscene = true;
+            if (SaveData.storyLevel < 2)
+            {
+                SaveData.storyLevel = 2;
+                SaveData.Save();
+            }
             SceneManager.LoadScene("Cutscenes");
         }
         if (transform.position.y > 7 && !starko && !naturalDeath)

@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "ZY227F8PZG",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "ZY227F8PZG",
+        "name": "com.MasterLGames.MochaPop",
+        "processId": 8742,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,6 +12,12 @@
             "deviceId": "ZY227F8PZG",
             "name": "com.discord",
             "processId": 7242,
+            "exited": true
+        },
+        {
+            "deviceId": "ZY227F8PZG",
+            "name": "com.MasterLGames.MochaPop",
+            "processId": 8742,
             "exited": false
         }
     ],

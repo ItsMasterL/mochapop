@@ -20,15 +20,18 @@ public class Pop : MonoBehaviour
 
     public RectTransform boopZone;
 
+    //Expressions
     [SerializeField]
     string popOpen = "pop";
     [SerializeField]
     string popClose = "not pop";
+    [SerializeField]
+    string sad = "sad";
 
     float autopoptime;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
         if (!AI)
@@ -42,27 +45,43 @@ public class Pop : MonoBehaviour
             Costume(SaveData.costume);
             if (SaveData.unlockBank) popcount = SaveData.savedPops;
         }
+
+        anim.Play(popClose);
     }
 
     public void Costume(int index)
     {
         switch (index)
         {
-            case 0:
+            default:
                 popOpen = "pop";
                 popClose = "not pop";
+                sad = "sad";
                 break;
             case 1:
                 popOpen = "popBlush";
                 popClose = "not popBlush";
+                sad = "sadBlush";
                 break;
             case 2:
                 popOpen = "popCool";
                 popClose = "not popCool";
+                sad = "sadCool";
                 break;
             case 3:
                 popOpen = "popBeta";
                 popClose = "not popBeta";
+                sad = "sadBeta";
+                break;
+            case 4:
+                popOpen = "popGamerBird";
+                popClose = "not popGamerBird";
+                sad = "sadGamerBird";
+                break;
+            case 5:
+                popOpen = "popPatientCroc";
+                popClose = "not popPatientCroc";
+                sad = "sadPatientCroc";
                 break;
         }
         SaveData.costume = index;
@@ -119,12 +138,9 @@ public class Pop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
         //Top Popper 5K
-        if (popcount >= 5000 && !SaveData.achievement2)
+        if (popcount == 5000 && !SaveData.achievement2)
         {
-            GameObject.Find("Achievement").GetComponent<TextRGB>().alpha = 5;
-            GameObject.Find("Achievement").GetComponent<AudioSource>().Play();
-            SaveData.Achieved(2);
-            SaveData.Save();
+            GameObject.Find("Achievement").GetComponent<Achievements>().Achievement(2);
         }
 
         
@@ -145,7 +161,7 @@ public class Pop : MonoBehaviour
         if (SaveData.unlockBank)
         {
             SaveData.savedPops = popcount;
-            SaveData.PopSave();
+            SaveData.Save("pops", SaveData.savedPops);
         }
         if (Events != null)
         {
