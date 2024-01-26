@@ -2391,6 +2391,9 @@ MonoBehaviour:
   noiseVariation: 1
   isAndroid: 0
   isPopping: 0
+  cutsceneNormal: 0
+  cutscenePop: 0
+  cutsceneSad: 0
   Events: {fileID: 0}
   Discord: {fileID: 0}
   boopZone: {fileID: 0}
@@ -3111,6 +3114,9 @@ MonoBehaviour:
   noiseVariation: 1
   isAndroid: 0
   isPopping: 0
+  cutsceneNormal: 0
+  cutscenePop: 0
+  cutsceneSad: 0
   Events: {fileID: 0}
   Discord: {fileID: 0}
   boopZone: {fileID: 0}
@@ -3127,7 +3133,7 @@ Animator:
   m_GameObject: {fileID: 1314714967}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 02489b0052724e94d8e5b659a9cdc77d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 08a800497f5cd034493320811407ce69, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

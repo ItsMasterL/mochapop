@@ -47,9 +47,48 @@ public class Pop : MonoBehaviour
                 isAndroid = true;
             }
             Costume(SaveData.costume);
+
             if (SaveData.unlockBank) popcount = SaveData.savedPops;
         }
 
+        anim.Play(popClose);
+    }
+
+    public void CostumeNoSave(int index)
+    {
+        switch (index)
+        {
+            default:
+                popOpen = "pop";
+                popClose = "not pop";
+                sad = "sad";
+                break;
+            case 1:
+                popOpen = "popBlush";
+                popClose = "not popBlush";
+                sad = "sadBlush";
+                break;
+            case 2:
+                popOpen = "popCool";
+                popClose = "not popCool";
+                sad = "sadCool";
+                break;
+            case 3:
+                popOpen = "popBeta";
+                popClose = "not popBeta";
+                sad = "sadBeta";
+                break;
+            case 4:
+                popOpen = "popGamerBird";
+                popClose = "not popGamerBird";
+                sad = "sadGamerBird";
+                break;
+            case 5:
+                popOpen = "popPatientCroc";
+                popClose = "not popPatientCroc";
+                sad = "sadPatientCroc";
+                break;
+        }
         anim.Play(popClose);
     }
 
@@ -107,16 +146,19 @@ public class Pop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cutsceneNormal && anim.GetCurrentAnimatorStateInfo(0).IsName(popClose) == false)
+        if (cutsceneNormal)
         {
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer." + popClose) == false)
             anim.Play(popClose);
         }
-        if (cutscenePop && anim.GetCurrentAnimatorStateInfo(0).IsName(popOpen) == false)
+        if (cutscenePop)
         {
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer." + popOpen) == false)
             anim.Play(popOpen);
         }
-        if (cutsceneNormal && anim.GetCurrentAnimatorStateInfo(0).IsName(sad) == false)
+        if (cutsceneSad)
         {
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer." + sad) == false)
             anim.Play(sad);
         }
         if (autopoptime > 0)

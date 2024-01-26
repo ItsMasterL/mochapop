@@ -30,6 +30,9 @@ public class StoryModeManager : MonoBehaviour
             case 2:
                 LevelName = "PatientCroc";
                 break;
+            case 3:
+                LevelName = "Clumsy Ferret";
+                break;
         }
 
         if (SceneManager.GetActiveScene().name == "Cutscenes" && watchCutscene == true && setup == false)
@@ -52,12 +55,18 @@ public class StoryModeManager : MonoBehaviour
                 case 1:
                     Debug.Log("Starting Scene");
                     GameObject.Find("Mocha").GetComponent<Animator>().Play("M_level1", 1);
-                    GameObject.Find("Rival").GetComponent<Animator>().Play("not popGamerBird", 0);
                     GameObject.Find("Rival").GetComponent<Animator>().Play("GB_level1", 1);
                     cutsceneLength = 15f;
                     setup = true;
                     break;
                 case 2:
+                    Debug.Log("Starting Scene");
+                    GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro", 1);
+                    GameObject.Find("mochapopTragedy").GetComponent<AudioSource>().Play();
+                    cutsceneLength = 22.47f;
+                    setup = true;
+                    break;
+                case 3:
                     Debug.Log("Starting Scene");
                     GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro", 1);
                     GameObject.Find("mochapopTragedy").GetComponent<AudioSource>().Play();

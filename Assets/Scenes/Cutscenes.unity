@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 245012024}
   - component: {fileID: 245012022}
   - component: {fileID: 245012021}
+  - component: {fileID: 245012023}
   m_Layer: 5
   m_Name: Rival
   m_TagString: Untagged
@@ -325,15 +326,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 54b645b2c2854d04592fc538fe7db2ff, type: 3}
+  m_Sprite: {fileID: 9095853184155359625, guid: bea814fd6e622d44fa56fc67b9157fc1,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 16}
+  m_Size: {x: 16.003908, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &245012022
@@ -346,7 +348,7 @@ Animator:
   m_GameObject: {fileID: 245012019}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 02489b0052724e94d8e5b659a9cdc77d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 08a800497f5cd034493320811407ce69, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -355,6 +357,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &245012023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245012019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7f8ca1b2cbd4a489188b84bf0c5296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  pop: {fileID: 0}
+  unpop: {fileID: 0}
+  debugPopcount: 0
+  canPop: 0
+  AI: 0
+  makesNoise: 0
+  noiseVariation: 0
+  isAndroid: 0
+  isPopping: 0
+  cutsceneNormal: 0
+  cutscenePop: 0
+  cutsceneSad: 0
+  Events: {fileID: 0}
+  Discord: {fileID: 0}
+  boopZone: {fileID: 0}
+  popOpen: pop
+  popClose: not pop
+  sad: sad
 --- !u!222 &245012024
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -989,15 +1022,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3d5b87bf530375c4fa77974bd1d44535, type: 3}
+  m_Sprite: {fileID: 9095853184155359625, guid: bea814fd6e622d44fa56fc67b9157fc1,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 16, y: 16}
+  m_Size: {x: 16.003908, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!222 &1163549446
