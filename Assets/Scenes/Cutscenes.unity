@@ -333,7 +333,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &245012022
@@ -725,7 +725,7 @@ SpriteRenderer:
   m_Size: {x: 2.56, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1029786760
@@ -936,12 +936,20 @@ MonoBehaviour:
   unpop: {fileID: 0}
   debugPopcount: 0
   canPop: 0
+  AI: 0
   makesNoise: 0
   noiseVariation: 0
   isAndroid: 0
+  isPopping: 0
+  cutsceneNormal: 0
+  cutscenePop: 0
+  cutsceneSad: 0
   Events: {fileID: 0}
   Discord: {fileID: 0}
   boopZone: {fileID: 0}
+  popOpen: pop
+  popClose: not pop
+  sad: sad
 --- !u!212 &1163549445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -989,7 +997,7 @@ SpriteRenderer:
   m_Size: {x: 16, y: 16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!222 &1163549446

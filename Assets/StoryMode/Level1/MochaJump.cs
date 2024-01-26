@@ -64,8 +64,8 @@ public class MochaJump : MonoBehaviour
         if (starko && transform.localScale.y > 0.0001f && !naturalDeath)
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(4, -3);
-            transform.localScale = new Vector3(transform.localScale.x - 0.0001f, transform.localScale.y - 0.0001f, transform.localScale.z);
-            transform.Rotate(new Vector3(0, 0, 1f));
+            transform.localScale = new Vector3(transform.localScale.x - (0.035f * Time.deltaTime), transform.localScale.y - (0.035f * Time.deltaTime), transform.localScale.z);
+            transform.Rotate(new Vector3(0, 0, (360f * Time.deltaTime)));
         }
         float dist = float.PositiveInfinity;
         foreach (GameObject obj in moners)

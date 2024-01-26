@@ -8,12 +8,14 @@ public class SlideToTheLeft : MonoBehaviour
     public string tpPos = null;
     public float tpTo;
     public bool randomizeHeight;
+    public float heightMin = -2.5f;
+    public float heightMax = 2.75f;
     
     // Update is called once per frame
     void Update()
     {
         transform.position = new Vector3(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y, transform.position.z);
-        if (tpPos != null || tpPos != "")
+        if (tpPos != string.Empty)
         {
             if (transform.position.x <= float.Parse(tpPos) && !randomizeHeight)
             {
@@ -21,7 +23,7 @@ public class SlideToTheLeft : MonoBehaviour
             }
             else if (transform.position.x <= float.Parse(tpPos) && randomizeHeight)
             {
-                transform.position = new Vector3(tpTo, Random.Range(-2.5f, 2.75f), transform.position.z);
+                transform.position = new Vector3(tpTo, Random.Range(heightMin, heightMax), transform.position.z);
             }
         }
     }

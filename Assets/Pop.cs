@@ -14,6 +14,10 @@ public class Pop : MonoBehaviour
     public bool makesNoise = true;
     public bool noiseVariation = true;
     public bool isAndroid = false;
+    public bool isPopping;
+    public bool cutsceneNormal;
+    public bool cutscenePop;
+    public bool cutsceneSad;
 
     public GameObject Events;
     public GameObject Discord;
@@ -85,7 +89,7 @@ public class Pop : MonoBehaviour
                 break;
         }
         SaveData.costume = index;
-        if (!isAndroid) Discord.GetComponent<Status>().changeImage(index);
+        if (!isAndroid && Discord != null) Discord.GetComponent<Status>().changeImage(index);
         SaveData.Save();
         anim.Play(popClose);
     }
@@ -103,6 +107,18 @@ public class Pop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (cutsceneNormal && anim.GetCurrentAnimatorStateInfo(0).IsName(popClose) == false)
+        {
+            anim.Play(popClose);
+        }
+        if (cutscenePop && anim.GetCurrentAnimatorStateInfo(0).IsName(popOpen) == false)
+        {
+            anim.Play(popOpen);
+        }
+        if (cutsceneNormal && anim.GetCurrentAnimatorStateInfo(0).IsName(sad) == false)
+        {
+            anim.Play(sad);
+        }
         if (autopoptime > 0)
         {
             autopoptime -= Time.deltaTime;
@@ -147,6 +163,7 @@ public class Pop : MonoBehaviour
     }
     public void OpenPop()
     {
+        isPopping = true;
         anim.Play(popOpen);
         if (noiseVariation)
         {
@@ -182,6 +199,7 @@ public class Pop : MonoBehaviour
     }
     public void OpenPop(float time)
     {
+        isPopping = true;
         autopoptime = time;
         anim.Play(popOpen);
         if (noiseVariation)
@@ -200,9 +218,10 @@ public class Pop : MonoBehaviour
     {
         if (autopoptime == 0)
         {
+            isPopping = false;
             anim.Play(popClose);
             if (makesNoise) unpop.Play();
-            boopZone.anchoredPosition = new Vector3(10.8f, 3.63f, 0);
+            if (boopZone != null) boopZone.anchoredPosition = new Vector3(10.8f, 3.63f, 0);
         }
     }
 }
