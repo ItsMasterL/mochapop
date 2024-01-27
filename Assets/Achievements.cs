@@ -8,7 +8,7 @@ public class Achievements : MonoBehaviour
     {
         GetComponent<TextRGB>().alpha = 5;
         GetComponent<AudioSource>().Play();
-        GetComponentInChildren<AchievementSubtext>().Info(id, false);
+        GetComponentInChildren<AchievementSubtext>().Info(id - 1, false);
         SaveData.Achieved(id);
         SaveData.Save();
     }

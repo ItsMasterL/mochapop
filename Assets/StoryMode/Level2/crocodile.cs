@@ -15,13 +15,14 @@ public class crocodile : MonoBehaviour
     int fallCheck;
     GameObject mocha;
     BoxCollider2D col;
+    bool died;
     // Start is called before the first frame update
     void Start()
     {
         timer = Random.Range(1f, 10f);
         max = obstacles.Length;
         pop = GetComponent<Pop>();
-        endPop = Random.Range(0.1f, 1f);
+        endPop = Random.Range(0.2f, 1f);
         mocha = GameObject.Find("Mocha");
         col = GetComponent<BoxCollider2D>();
     }
@@ -31,6 +32,11 @@ public class crocodile : MonoBehaviour
     {
         if (col.enabled == false)
         {
+            if (died == false)
+            {
+                died = true;
+                mocha.GetComponent<AudioSource>().Play();
+            }
             transform.localScale = new Vector3(transform.localScale.x, 0.02f, transform.localScale.z);
             transform.position = new Vector3(transform.position.x, 2.47f, transform.position.z);
             pop.isPopping = true;
@@ -60,7 +66,7 @@ public class crocodile : MonoBehaviour
             timer = Random.Range(1, 10);
             lastDrop = null;
             pop.OpenPop(endPop);
-            endPop = Random.Range(0.1f, 1f);
+            endPop = Random.Range(0.2f, 1f);
             foreach(GameObject obj in obstacles)
             {
                 if (obj.GetComponent<FallingObject>().falling) fallCheck++;

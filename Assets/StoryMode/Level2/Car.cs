@@ -23,5 +23,6 @@ public class Car : MonoBehaviour
     {
         driveSpeed = 0.01f;
         collision.collider.enabled = false;
+        GetComponent<AudioSource>().Play();
     }
 }

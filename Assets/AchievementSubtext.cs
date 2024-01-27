@@ -30,7 +30,7 @@ public class AchievementSubtext : MonoBehaviour
         codeNames = new string[9];
             codeNames[0] = "It's that guy";
             codeNames[1] = "PLACEHOLDER";
-            codeNames[2] = "Metroid Reference";
+            codeNames[2] = "Losers Pay Retail";
             codeNames[3] = "He's really not";
             codeNames[4] = "PLACEHOLDER";
             codeNames[5] = "Slayer of Beasts";

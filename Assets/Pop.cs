@@ -15,9 +15,7 @@ public class Pop : MonoBehaviour
     public bool noiseVariation = true;
     public bool isAndroid = false;
     public bool isPopping;
-    public bool cutsceneNormal;
-    public bool cutscenePop;
-    public bool cutsceneSad;
+    public bool isCutscene = false;
 
     public GameObject Events;
     public GameObject Discord;
@@ -90,6 +88,7 @@ public class Pop : MonoBehaviour
                 break;
         }
         anim.Play(popClose);
+        GetComponent<Vocals>().SetCharacter(index - 4);
     }
 
     public void Costume(int index)
@@ -133,6 +132,11 @@ public class Pop : MonoBehaviour
         anim.Play(popClose);
     }
 
+    public void SetPlayerVoice()
+    {
+        GetComponent<Vocals>().SetCharacter(SaveData.costume - 4);
+    }
+
     public void SetPops(bool CanPop)
     {
         canPop = CanPop;
@@ -143,24 +147,38 @@ public class Pop : MonoBehaviour
         makesNoise = !makesNoise;
     }
 
+    public void SetExpression(int value)
+    {
+        switch (value)
+        {
+            default:
+                anim.Play(popClose);
+                break;
+            case 1:
+                anim.Play(popOpen);
+                break;
+            case 2:
+                anim.Play(sad);
+                break;
+        }
+    }
+
+    //Japanese phonetics:
+    //0 - a
+    //1 - i
+    //2 - u
+    //3 - e
+    //4 - o
+    public void Speak(int sound)
+    {
+        Debug.Log(transform.GetChild(sound).name);
+        if (noiseVariation) transform.GetChild(sound).GetComponent<AudioSource>().pitch = Random.Range(0.95f, 1.05f);
+        transform.GetChild(sound).GetComponent<AudioSource>().Play();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (cutsceneNormal)
-        {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer." + popClose) == false)
-            anim.Play(popClose);
-        }
-        if (cutscenePop)
-        {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer." + popOpen) == false)
-            anim.Play(popOpen);
-        }
-        if (cutsceneSad)
-        {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Base Layer." + sad) == false)
-            anim.Play(sad);
-        }
         if (autopoptime > 0)
         {
             autopoptime -= Time.deltaTime;
@@ -188,7 +206,7 @@ public class Pop : MonoBehaviour
             }
         }
 
-        if (canPop == false && anim.GetCurrentAnimatorStateInfo(0).IsName(popOpen))
+        if (canPop == false && anim.GetCurrentAnimatorStateInfo(0).IsName(popOpen) && isCutscene == false)
         {
             ClosePop();
         }

@@ -10,7 +10,18 @@ public class StoryModeManager : MonoBehaviour
     public string LevelName;
     public float cutsceneLength;
     bool setup;
-    
+    [Space(20)]
+    [SerializeField]
+    int debugSetLevel = -1;
+
+    private void Start()
+    {
+        if (debugSetLevel != -1)
+        {
+            SaveData.storyLevel = debugSetLevel;
+        }
+    }
+
     public void StartButton()
     {
         DontDestroyOnLoad(gameObject);
@@ -55,14 +66,14 @@ public class StoryModeManager : MonoBehaviour
                 case 1:
                     Debug.Log("Starting Scene");
                     GameObject.Find("Mocha").GetComponent<Animator>().Play("M_level1", 1);
-                    GameObject.Find("Rival").GetComponent<Animator>().Play("GB_level1", 1);
-                    cutsceneLength = 15f;
+                    GameObject.Find("Rival").GetComponent<Animator>().Play("R_level1", 1);
+                    cutsceneLength = 14f;
                     setup = true;
                     break;
                 case 2:
                     Debug.Log("Starting Scene");
-                    GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro", 1);
-                    GameObject.Find("mochapopTragedy").GetComponent<AudioSource>().Play();
+                    GameObject.Find("Mocha").GetComponent<Animator>().Play("M_level2", 1);
+                    GameObject.Find("Rival").GetComponent<Animator>().Play("R_level2", 1);
                     cutsceneLength = 22.47f;
                     setup = true;
                     break;

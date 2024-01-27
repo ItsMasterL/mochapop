@@ -14,7 +14,7 @@ public class UnlockCodes : MonoBehaviour
 
         codes[0] = "ohnotthatguy"; //Brett's code
         codes[1] = "EXTOCINE"; //Exto's code
-        codes[2] = "engageridleymfer"; //Deon's code
+        codes[2] = "finderskeepers"; //Deon's code
         codes[3] = "i'mnotafurryguys"; //Syowen's code
         codes[4] = "mightygen"; //Skylar's code
         codes[5] = "FUDGIKAKE"; //Fudgi's code

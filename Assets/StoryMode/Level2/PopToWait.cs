@@ -12,6 +12,7 @@ public class PopToWait : MonoBehaviour
     float initX;
     BoxCollider2D collision;
     SlideToTheLeft slide;
+    bool died;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,11 @@ public class PopToWait : MonoBehaviour
     {
         if (collision.enabled == false)
         {
+            if (died == false)
+            {
+                died = true;
+                GetComponent<AudioSource>().Play();
+            }
             transform.localScale = new Vector3(transform.localScale.x, 0.02f, transform.localScale.z);
             transform.position = new Vector3(transform.position.x, -4, transform.position.z);
             slide.enabled = true;
