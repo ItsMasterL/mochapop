@@ -86,6 +86,11 @@ public class Pop : MonoBehaviour
                 popClose = "not popPatientCroc";
                 sad = "sadPatientCroc";
                 break;
+            case 6:
+                popOpen = "popClumsyFerret";
+                popClose = "not popClumsyFerret";
+                sad = "sadClumsyFerret";
+                break;
         }
         anim.Play(popClose);
         GetComponent<Vocals>().SetCharacter(index - 4);

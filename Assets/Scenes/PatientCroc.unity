@@ -8945,9 +8945,7 @@ MonoBehaviour:
   noiseVariation: 1
   isAndroid: 0
   isPopping: 0
-  cutsceneNormal: 0
-  cutscenePop: 0
-  cutsceneSad: 0
+  isCutscene: 0
   Events: {fileID: 0}
   Discord: {fileID: 0}
   boopZone: {fileID: 0}
@@ -10272,9 +10270,7 @@ MonoBehaviour:
   noiseVariation: 1
   isAndroid: 0
   isPopping: 0
-  cutsceneNormal: 0
-  cutscenePop: 0
-  cutsceneSad: 0
+  isCutscene: 0
   Events: {fileID: 0}
   Discord: {fileID: 0}
   boopZone: {fileID: 0}

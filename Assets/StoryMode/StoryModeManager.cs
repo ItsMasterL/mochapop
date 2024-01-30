@@ -42,7 +42,7 @@ public class StoryModeManager : MonoBehaviour
                 LevelName = "PatientCroc";
                 break;
             case 3:
-                LevelName = "Clumsy Ferret";
+                LevelName = "ClumsyFerret";
                 break;
         }
 
