@@ -44,6 +44,9 @@ public class StoryModeManager : MonoBehaviour
             case 3:
                 LevelName = "ClumsyFerret";
                 break;
+            case 4:
+                LevelName = "SlickBrick";
+                break;
         }
 
         if (SceneManager.GetActiveScene().name == "Cutscenes" && watchCutscene == true && setup == false)
@@ -56,6 +59,11 @@ public class StoryModeManager : MonoBehaviour
             //GameObject.Find("Mocha").GetComponent<Pop>().Costume(SaveData.costume);
             switch (Level)
             {
+                default:
+                    Debug.Log("Invalid Cutscene!");
+                    cutsceneLength = 1.2f;
+                    setup = true;
+                    break;
                 case 0:
                     Debug.Log("Starting Scene");
                     GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro",1);
@@ -74,13 +82,6 @@ public class StoryModeManager : MonoBehaviour
                     Debug.Log("Starting Scene");
                     GameObject.Find("Mocha").GetComponent<Animator>().Play("M_level2", 1);
                     GameObject.Find("Rival").GetComponent<Animator>().Play("R_level2", 1);
-                    cutsceneLength = 22.47f;
-                    setup = true;
-                    break;
-                case 3:
-                    Debug.Log("Starting Scene");
-                    GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro", 1);
-                    GameObject.Find("mochapopTragedy").GetComponent<AudioSource>().Play();
                     cutsceneLength = 22.47f;
                     setup = true;
                     break;

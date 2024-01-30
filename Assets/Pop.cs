@@ -54,6 +54,23 @@ public class Pop : MonoBehaviour
 
     public void CostumeNoSave(int index)
     {
+        SetCostumeDetails(index);
+        anim.Play(popClose);
+        GetComponent<Vocals>().SetCharacter(index - 4);
+    }
+
+    public void Costume(int index)
+    {
+        SetCostumeDetails(index);
+        SaveData.costume = index;
+        if (!isAndroid && Discord != null) Discord.GetComponent<Status>().changeImage(index);
+        SaveData.Save();
+        anim.Play(popClose);
+    }
+
+
+    private void SetCostumeDetails(int index) //Never call directly
+    {
         switch (index)
         {
             default:
@@ -92,51 +109,7 @@ public class Pop : MonoBehaviour
                 sad = "sadClumsyFerret";
                 break;
         }
-        anim.Play(popClose);
-        GetComponent<Vocals>().SetCharacter(index - 4);
     }
-
-    public void Costume(int index)
-    {
-        switch (index)
-        {
-            default:
-                popOpen = "pop";
-                popClose = "not pop";
-                sad = "sad";
-                break;
-            case 1:
-                popOpen = "popBlush";
-                popClose = "not popBlush";
-                sad = "sadBlush";
-                break;
-            case 2:
-                popOpen = "popCool";
-                popClose = "not popCool";
-                sad = "sadCool";
-                break;
-            case 3:
-                popOpen = "popBeta";
-                popClose = "not popBeta";
-                sad = "sadBeta";
-                break;
-            case 4:
-                popOpen = "popGamerBird";
-                popClose = "not popGamerBird";
-                sad = "sadGamerBird";
-                break;
-            case 5:
-                popOpen = "popPatientCroc";
-                popClose = "not popPatientCroc";
-                sad = "sadPatientCroc";
-                break;
-        }
-        SaveData.costume = index;
-        if (!isAndroid && Discord != null) Discord.GetComponent<Status>().changeImage(index);
-        SaveData.Save();
-        anim.Play(popClose);
-    }
-
     public void SetPlayerVoice()
     {
         GetComponent<Vocals>().SetCharacter(SaveData.costume - 4);
