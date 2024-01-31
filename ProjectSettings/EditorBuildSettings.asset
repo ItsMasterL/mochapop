@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClumsyFerret.unity
     guid: 437758fd751d314408eaf1d498ad3534
+  - enabled: 1
+    path: Assets/Scenes/SlickBrick.unity
+    guid: e4eaf538c621d1e469ae417bae9a961f
   m_configObjects: {}

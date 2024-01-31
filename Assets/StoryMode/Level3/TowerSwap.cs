@@ -26,7 +26,7 @@ public class TowerSwap : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("ClumsyFerret");
         }
-        if (ai && Random.Range(0, 500) == 5 && transform.position.y < 7 && !pop.isPopping)
+        if (ai && Random.Range(0, 250) == 5 && transform.position.y < 7 && !pop.isPopping)
         {
             pop.OpenPop(Random.Range(0, 0.5f));
             transform.position = new Vector3(-transform.position.x, transform.position.y, transform.position.z);
