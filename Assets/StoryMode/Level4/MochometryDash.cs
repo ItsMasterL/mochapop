@@ -28,17 +28,35 @@ public class MochometryDash : MonoBehaviour
 
         return false;
     }
+    bool IsInWall()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = new Vector2(1,0f);
+        float distance;
+        distance = 0.25f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
     bool IsOrb;
     bool IsGravityOrb;
     bool buffer;
+    public bool doStartPos;
+    public Vector2 startPos;
     [SerializeField]
-    bool doStartPos;
-    [SerializeField]
-    Vector2 startPos;
+    float cameraHeight;
+    float deathCeiling;
+    GameObject cam;
 
     // Start is called before the first frame update
     void Start()
     {
+        cam = GameObject.Find("Main Camera");
         rb2 = gameObject.GetComponent<Rigidbody2D>();
         spr = gameObject.GetComponent<SpriteRenderer>();
         if (doStartPos)
@@ -47,33 +65,14 @@ public class MochometryDash : MonoBehaviour
             GameObject grid = GameObject.Find("Grid");
             grid.transform.position = new Vector3(-startPos.x - 1, grid.transform.position.y, grid.transform.position.z);
             GameObject.Find("mochapopSlickBrick").GetComponent<AudioSource>().time = startPos.x / 10.386f;
-            float offsetX = 0;
-            float offsetY = 0;
-            foreach(MoveTrigger trigger in GameObject.FindObjectsOfType<MoveTrigger>())
-            {
-                if (trigger.gameObject.transform.position.x < transform.position.x)
-                {
-                    if (trigger.relative)
-                    {
-                        offsetX += trigger.moveX;
-                        offsetY += trigger.moveY;
-                    }
-                    else
-                    {
-                        offsetX = trigger.moveX;
-                        offsetY = trigger.moveY;
-                    }
-                    trigger.gameObject.SetActive(false);
-                }
-            }
-            GameObject camera = GameObject.Find("Main Camera");
-            camera.transform.position = new Vector3(offsetX, offsetY, camera.transform.position.z);
+            cam.transform.position = new Vector3(cam.transform.position.x, cameraHeight, cam.transform.position.z);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        deathCeiling = cam.transform.position.y + 10;
         if (rb2.gravityScale < 1)
             spr.flipY = true;
         else
@@ -122,21 +121,30 @@ public class MochometryDash : MonoBehaviour
         {
             SceneManager.LoadScene("SlickBrick");
         }
+        if (IsInWall() && GetComponent<Pop>().canPop) Dieth();
+        
+        if (transform.position.y > deathCeiling && GetComponent<Pop>().canPop) Dieth();
+    }
+
+    private void Dieth()
+    {
+
+        foreach (SlideToTheLeft obj in FindObjectsOfType<SlideToTheLeft>())
+        {
+            obj.enabled = false;
+        }
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<Pop>().canPop = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GameObject.Find("mochapopSlickBrick").GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().Play();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag != "Snout")
         {
-            foreach (SlideToTheLeft obj in FindObjectsOfType<SlideToTheLeft>())
-            {
-                obj.enabled = false;
-            }
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<Pop>().canPop = false;
-            GetComponent<SpriteRenderer>().enabled = false;
-            GameObject.Find("mochapopSlickBrick").GetComponent<AudioSource>().Stop();
-            GetComponent<AudioSource>().Play();
+            Dieth();
             Debug.Log(collision.gameObject.tag);
         }
     }
@@ -157,20 +165,21 @@ public class MochometryDash : MonoBehaviour
             IsGravityOrb = true;
         if (collision.tag == "UI.Achievements")
         {
-            rb2.velocity = new Vector2(0, rb2.velocity.y / 2);
+            if (rb2.gravityScale > 0)
+                rb2.velocity = new Vector2(0, rb2.velocity.y / 2);
             rb2.gravityScale = -Mathf.Abs(rb2.gravityScale);
         }
         if (collision.tag == "UI.Achievements1")
         {
-            rb2.velocity = new Vector2(0, rb2.velocity.y / 2);
+            if (rb2.gravityScale < 0)
+                rb2.velocity = new Vector2(0, rb2.velocity.y / 2);
             rb2.gravityScale = Mathf.Abs(rb2.gravityScale);
         }
         if (collision.tag == "UI.Achievements2")
         {
-            rb2.velocity = new Vector2(0, 0);
+            if (rb2.gravityScale > 0) rb2.velocity = new Vector2(0, 14);
+            if (rb2.gravityScale < 0) rb2.velocity = new Vector2(0, -14);
             rb2.gravityScale = -rb2.gravityScale;
-            if (rb2.gravityScale > 0) rb2.velocity = new Vector2(0, 28);
-            if (rb2.gravityScale < 0) rb2.velocity = new Vector2(0, -28);
         }
     }
 

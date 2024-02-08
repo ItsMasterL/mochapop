@@ -36,6 +36,10 @@ public class MoveTrigger : MonoBehaviour
             index++;
         }
         index = 0;
+        if (player.GetComponent<MochometryDash>().doStartPos && player.GetComponent<MochometryDash>().startPos.x > transform.position.x)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
