@@ -24,6 +24,11 @@ public class ColorTrigger : MonoBehaviour
         player = GameObject.Find("Mocha");
         lerpMultiplier = 1 / changeTime;
         originalColors = new Color[0];
+
+        if (player.GetComponent<MochometryDash>().doStartPos && player.GetComponent<MochometryDash>().startPos.x > transform.position.x)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
