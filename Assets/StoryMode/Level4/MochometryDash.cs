@@ -6,10 +6,16 @@ using UnityEngine.SceneManagement;
 public class MochometryDash : MonoBehaviour
 {
     [SerializeField]
+    bool AI = false;
+    [SerializeField]
     LayerMask groundLayer;
+    [SerializeField]
+    LayerMask spikeLayer;
     float deathTimer;
     Rigidbody2D rb2;
     SpriteRenderer spr;
+    [SerializeField]
+    bool ignoreDamage;
     bool IsGrounded()
     {
         Vector2 position = transform.position;
@@ -36,6 +42,28 @@ public class MochometryDash : MonoBehaviour
         distance = 0.25f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+    bool IsNearObstacle()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = new Vector2(1,0f);
+        float distance;
+        distance = 2.5f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+
+        distance = 1.5f;
+        hit = Physics2D.Raycast(position, direction, distance, spikeLayer);
         if (hit.collider != null)
         {
             return true;
@@ -77,67 +105,124 @@ public class MochometryDash : MonoBehaviour
             spr.flipY = true;
         else
             spr.flipY = false;
-        if (GetComponent<Pop>().canPop)
+        if (AI)
         {
-            if ((Input.GetKey(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButton(0))) && (IsGrounded() == true))
+            if (GetComponent<SpriteRenderer>().enabled)
             {
-                if (rb2.gravityScale > 1)
-                    rb2.velocity = new Vector2(0, 19);
-                else
-                    rb2.velocity = new Vector2(0, -19);
-                buffer = false;
-            }
-            if ((Input.GetKeyDown(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonDown(0))) && (IsGrounded() == false && IsOrb == false && IsGravityOrb == false))
-            {
-                buffer = true;
-            }
-            if ((Input.GetKeyUp(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonUp(0))) && (buffer == true))
-            {
-                buffer = false;
-            }
+                if (IsNearObstacle())
+                {
+                    GetComponent<Pop>().OpenPop(0.25f);
+                }
+                if (GetComponent<Pop>().isPopping && (IsGrounded() == true))
+                {
+                    if (rb2.gravityScale > 1)
+                        rb2.velocity = new Vector2(0, 19);
+                    else
+                        rb2.velocity = new Vector2(0, -19);
+                    buffer = false;
+                }
+                if (GetComponent<Pop>().isPopping && (IsGrounded() == false && IsOrb == false && IsGravityOrb == false))
+                {
+                    buffer = true;
+                }
+                if (GetComponent<Pop>().isPopping && (buffer == true))
+                {
+                    buffer = false;
+                }
 
-            if ((Input.GetKeyDown(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonDown(0)) || buffer == true) && (IsOrb == true))
-            {
-                if (rb2.gravityScale > 1)
-                    rb2.velocity = new Vector2(0, 19);
-                else
-                    rb2.velocity = new Vector2(0, -19);
-                IsOrb = false;
-                buffer = false;
-            }
-            if ((Input.GetKeyDown(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonDown(0)) || buffer == true) && IsGravityOrb)
-            {
-                rb2.velocity = new Vector2(0, 0);
-                rb2.gravityScale *= -1;
-                IsGravityOrb = false;
-                buffer = false;
+                if ((GetComponent<Pop>().isPopping || buffer == true) && (IsOrb == true))
+                {
+                    if (rb2.gravityScale > 1)
+                        rb2.velocity = new Vector2(0, 19);
+                    else
+                        rb2.velocity = new Vector2(0, -19);
+                    IsOrb = false;
+                    buffer = false;
+                }
+                if ((GetComponent<Pop>().isPopping || buffer == true) && IsGravityOrb)
+                {
+                    rb2.velocity = new Vector2(0, 0);
+                    rb2.gravityScale *= -1;
+                    IsGravityOrb = false;
+                    buffer = false;
+                }
             }
         }
         else
         {
-            deathTimer += Time.deltaTime;
-        }
-        if (deathTimer > 0.75f)
-        {
-            SceneManager.LoadScene("SlickBrick");
+            if (GetComponent<Pop>().canPop)
+            {
+                if ((Input.GetKey(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButton(0))) && (IsGrounded() == true))
+                {
+                    if (rb2.gravityScale > 1)
+                        rb2.velocity = new Vector2(0, 19);
+                    else
+                        rb2.velocity = new Vector2(0, -19);
+                    buffer = false;
+                }
+                if ((Input.GetKeyDown(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonDown(0))) && (IsGrounded() == false && IsOrb == false && IsGravityOrb == false))
+                {
+                    buffer = true;
+                }
+                if ((Input.GetKeyUp(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonUp(0))) && (buffer == true))
+                {
+                    buffer = false;
+                }
+
+                if ((Input.GetKeyDown(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonDown(0)) || buffer == true) && (IsOrb == true))
+                {
+                    if (rb2.gravityScale > 1)
+                        rb2.velocity = new Vector2(0, 19);
+                    else
+                        rb2.velocity = new Vector2(0, -19);
+                    IsOrb = false;
+                    buffer = false;
+                }
+                if ((Input.GetKeyDown(KeyCode.Space) || (GetComponent<Pop>().isAndroid == true && Input.GetMouseButtonDown(0)) || buffer == true) && IsGravityOrb)
+                {
+                    rb2.velocity = new Vector2(0, 0);
+                    rb2.gravityScale *= -1;
+                    IsGravityOrb = false;
+                    buffer = false;
+                }
+            }
+            else
+            {
+                deathTimer += Time.deltaTime;
+            }
+            if (deathTimer > 0.75f)
+            {
+                SceneManager.LoadScene("SlickBrick");
+            }
         }
         if (IsInWall() && GetComponent<Pop>().canPop) Dieth();
         
         if (transform.position.y > deathCeiling && GetComponent<Pop>().canPop) Dieth();
+
     }
 
     private void Dieth()
     {
-
-        foreach (SlideToTheLeft obj in FindObjectsOfType<SlideToTheLeft>())
+        if (ignoreDamage) return;
+        if (AI)
         {
-            obj.enabled = false;
+            GetComponent<AudioSource>().Play();
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Pop>().canPop = false;
+            GetComponent<SpriteRenderer>().enabled = false;
         }
-        GetComponent<BoxCollider2D>().enabled = false;
-        GetComponent<Pop>().canPop = false;
-        GetComponent<SpriteRenderer>().enabled = false;
-        GameObject.Find("mochapopSlickBrick").GetComponent<AudioSource>().Stop();
-        GetComponent<AudioSource>().Play();
+        else
+        {
+            foreach (SlideToTheLeft obj in FindObjectsOfType<SlideToTheLeft>())
+            {
+                obj.enabled = false;
+            }
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Pop>().canPop = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            GameObject.Find("mochapopSlickBrick").GetComponent<AudioSource>().Stop();
+            GetComponent<AudioSource>().Play();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

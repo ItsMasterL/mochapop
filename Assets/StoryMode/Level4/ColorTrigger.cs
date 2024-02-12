@@ -15,12 +15,14 @@ public class ColorTrigger : MonoBehaviour
     GameObject player;
     Color[] originalColors;
     int index = 0;
+    GameObject cam;
 
     float lerpMultiplier;
     float deltatime;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        cam = GameObject.Find("Main Camera");
         player = GameObject.Find("Mocha");
         lerpMultiplier = 1 / changeTime;
         originalColors = new Color[0];
@@ -59,6 +61,7 @@ public class ColorTrigger : MonoBehaviour
                 Color mod = Color.Lerp(originalColors[index], color, curve.Evaluate(deltatime));
                 index++;
                 obj.color = mod;
+                cam.GetComponent<Camera>().backgroundColor = mod;
             }
             index = 0;
             deltatime += Time.deltaTime * lerpMultiplier;

@@ -108,6 +108,11 @@ public class Pop : MonoBehaviour
                 popClose = "not popClumsyFerret";
                 sad = "sadClumsyFerret";
                 break;
+            case 7:
+                popOpen = "popSlickBrick";
+                popClose = "not popSlickBrick";
+                sad = "sadSlickBrick";
+                break;
         }
     }
     public void SetPlayerVoice()
