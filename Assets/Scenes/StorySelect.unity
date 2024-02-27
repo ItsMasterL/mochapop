@@ -1500,7 +1500,7 @@ MonoBehaviour:
   Level: 0
   LevelName: 
   cutsceneLength: 0
-  debugSetLevel: -1
+  debugSetLevel: 10
 --- !u!1 &566795069
 GameObject:
   m_ObjectHideFlags: 0
