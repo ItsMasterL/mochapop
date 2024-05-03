@@ -5,7 +5,7 @@ using UnityEngine;
 public class ColorTrigger : MonoBehaviour
 {
     [SerializeField]
-    Color color = new Color(1,1,1,1);
+    Color color = new Color(1, 1, 1, 1);
     [SerializeField]
     SpriteRenderer[] colorTargets;
     [SerializeField]
@@ -56,7 +56,7 @@ public class ColorTrigger : MonoBehaviour
                 }
                 index = 0;
             }
-            foreach(SpriteRenderer obj in colorTargets)
+            foreach (SpriteRenderer obj in colorTargets)
             {
                 Color mod = Color.Lerp(originalColors[index], color, curve.Evaluate(deltatime));
                 index++;

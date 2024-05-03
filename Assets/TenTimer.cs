@@ -30,11 +30,11 @@ public class TenTimer : MonoBehaviour
         if (isActive == true && beginTime > 0)
         {
             beginTime -= Time.deltaTime;
-            discord.gameObject.GetComponent<Status>().presence.details = "Popping, but with more stress";
+            discord.GetComponent<Status>().presence.details = "Popping, but with more stress";
             System.DateTime epochStart = new System.DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc);
             int cur_time = (int)(System.DateTime.UtcNow - epochStart).TotalSeconds;
-            discord.gameObject.GetComponent<Status>().presence.endTimestamp = cur_time + 10;
-            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
+            discord.GetComponent<Status>().presence.endTimestamp = cur_time + 10;
+            DiscordRpc.UpdatePresence(ref discord.GetComponent<Status>().presence);
             foreach (GameObject i in disable)
             {
                 i.SetActive(false);
@@ -61,9 +61,9 @@ public class TenTimer : MonoBehaviour
             countdown = 10;
             resultsTime = 3;
             popcounttimed = 0;
-            discord.gameObject.GetComponent<Status>().presence.details = "Popping";
-            discord.gameObject.GetComponent<Status>().presence.endTimestamp = 0;
-            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
+            discord.GetComponent<Status>().presence.details = "Popping";
+            discord.GetComponent<Status>().presence.endTimestamp = 0;
+            DiscordRpc.UpdatePresence(ref discord.GetComponent<Status>().presence);
             foreach (GameObject i in disable)
             {
                 i.SetActive(true);

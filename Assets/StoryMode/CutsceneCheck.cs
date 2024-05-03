@@ -10,7 +10,7 @@ public class CutsceneCheck : MonoBehaviour
     {
 
         STM = GameObject.Find("StoryModeManager");
-        
+
         if (STM == null)
         {
             Debug.Log("Null!");
@@ -20,7 +20,8 @@ public class CutsceneCheck : MonoBehaviour
         if (STM.GetComponent<StoryModeManager>().watchCutscene)
         {
             GetComponent<FadeAlpha>().trigger = true;
-        } else
+        }
+        else
         {
             GetComponent<SceneChange>().Transition(STM.GetComponent<StoryModeManager>().LevelName);
         }

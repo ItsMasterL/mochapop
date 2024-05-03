@@ -15,7 +15,7 @@ public class TextRGB : MonoBehaviour
     public bool fadeOut = true;
     public bool outlineChange = false;
     public float hueOffset = 0.1f;
-    
+
     private void Start()
     {
         tmp = GetComponent<TextMeshProUGUI>();
@@ -23,15 +23,15 @@ public class TextRGB : MonoBehaviour
 
     private void Update()
     {
-            Color.RGBToHSV(tmp.color, out hue, out sat, out bri);
-            hue += rainbowSpeed * Time.deltaTime / 50;
-            if (hue >= 1)
-            {
-                hue = 0;
-            }
-            tmp.color = Color.HSVToRGB(hue, sat, bri);
-            if (outlineChange)
-            {
+        Color.RGBToHSV(tmp.color, out hue, out sat, out bri);
+        hue += rainbowSpeed * Time.deltaTime / 50;
+        if (hue >= 1)
+        {
+            hue = 0;
+        }
+        tmp.color = Color.HSVToRGB(hue, sat, bri);
+        if (outlineChange)
+        {
             tmp.outlineColor = Color.HSVToRGB(hue + hueOffset, sat, bri);
             /*if (hue + hueOffset < 1)
             {

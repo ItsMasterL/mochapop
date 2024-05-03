@@ -66,7 +66,7 @@ public class StoryModeManager : MonoBehaviour
                     break;
                 case 0:
                     Debug.Log("Starting Scene");
-                    GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro",1);
+                    GameObject.Find("Mocha").GetComponent<Animator>().Play("story_intro", 1);
                     GameObject.Find("mochapopTragedy").GetComponent<AudioSource>().Play();
                     cutsceneLength = 22.47f;
                     setup = true;
@@ -106,12 +106,14 @@ public class StoryModeManager : MonoBehaviour
                 }
                 GameObject.Find("Panel").GetComponent<SceneChange>().Transition("Cutscenes");
                 watchCutscene = false;
-            } else
+            }
+            else
             {
                 if (SceneUtility.GetBuildIndexByScenePath(LevelName) != -1)
                 {
                     GameObject.Find("Panel").GetComponent<SceneChange>().Transition(LevelName);
-                } else
+                }
+                else
                 {
                     Debug.LogError("Level not found!");
                     GameObject.Find("Panel").GetComponent<SceneChange>().Transition("StorySelect");

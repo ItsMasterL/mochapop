@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ferretbg : MonoBehaviour
+public class FerretBG : MonoBehaviour
 {
     [SerializeField]
     private float gametime;

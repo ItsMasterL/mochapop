@@ -7,7 +7,7 @@ public class NoDuplicate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach(NoDuplicate obj in GameObject.FindObjectsOfType<NoDuplicate>())
+        foreach (NoDuplicate obj in GameObject.FindObjectsOfType<NoDuplicate>())
         {
             if (obj.gameObject.name == gameObject.name && obj.gameObject != gameObject)
             {

@@ -11,14 +11,14 @@ public class SetGroup : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        foreach(GameObject i in GameObject.FindGameObjectsWithTag(GroupTag))
+        foreach (GameObject i in GameObject.FindGameObjectsWithTag(GroupTag))
         {
             items.Add(i);
         }
         Done = true;
         if (!StartEnabled)
         {
-            foreach(GameObject i in items)
+            foreach (GameObject i in items)
             {
                 i.SetActive(false);
             }
@@ -27,7 +27,7 @@ public class SetGroup : MonoBehaviour
 
     public void Toggle(bool Enable)
     {
-        foreach(GameObject i in items)
+        foreach (GameObject i in items)
         {
             i.SetActive(Enable);
         }

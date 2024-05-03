@@ -26,7 +26,7 @@ public class SaveData : MonoBehaviour
     public static bool code7;
     public static bool code8;
     public static bool code9;
-    
+
     public static int costume;
     public static int savedPops;
 
@@ -34,7 +34,7 @@ public class SaveData : MonoBehaviour
 
     public List<GameObject> shops;
     public static List<GameObject> staticshops;
-    
+
     void Awake()
     {
         Load();
@@ -47,33 +47,33 @@ public class SaveData : MonoBehaviour
         Debug.Log("Loading");
         if (PlayerPrefs.HasKey("uTimer"))
         {
-            unlockTimer = PlayerPrefs.GetInt("uTimer") == 1 ? true : false;
-            unlockSpeed = PlayerPrefs.GetInt("uSpeed") == 1 ? true : false;
-            unlockRGB = PlayerPrefs.GetInt("uRGB") == 1 ? true : false;
-            unlockSilence = PlayerPrefs.GetInt("uSilence") == 1 ? true : false;
-            unlockBank = PlayerPrefs.GetInt("uBank") == 1 ? true : false;
-            unlockStory = PlayerPrefs.GetInt("uStory") == 1 ? true : false;
+            unlockTimer = PlayerPrefs.GetInt("uTimer") == 1;
+            unlockSpeed = PlayerPrefs.GetInt("uSpeed") == 1;
+            unlockRGB = PlayerPrefs.GetInt("uRGB") == 1;
+            unlockSilence = PlayerPrefs.GetInt("uSilence") == 1;
+            unlockBank = PlayerPrefs.GetInt("uBank") == 1;
+            unlockStory = PlayerPrefs.GetInt("uStory") == 1;
 
             storyLevel = PlayerPrefs.GetInt("sLevel");
 
-            achievement1 = PlayerPrefs.GetInt("a1") == 1 ? true : false;
-            achievement2 = PlayerPrefs.GetInt("a2") == 1 ? true : false;
-            achievement3 = PlayerPrefs.GetInt("a3") == 1 ? true : false;
+            achievement1 = PlayerPrefs.GetInt("a1") == 1;
+            achievement2 = PlayerPrefs.GetInt("a2") == 1;
+            achievement3 = PlayerPrefs.GetInt("a3") == 1;
 
-            code1 = PlayerPrefs.GetInt("c1") == 1 ? true : false;
-            code2 = PlayerPrefs.GetInt("c2") == 1 ? true : false;
-            code3 = PlayerPrefs.GetInt("c3") == 1 ? true : false;
-            code4 = PlayerPrefs.GetInt("c4") == 1 ? true : false;
-            code5 = PlayerPrefs.GetInt("c5") == 1 ? true : false;
-            code6 = PlayerPrefs.GetInt("c6") == 1 ? true : false;
-            code7 = PlayerPrefs.GetInt("c7") == 1 ? true : false;
-            code8 = PlayerPrefs.GetInt("c8") == 1 ? true : false;
-            code9 = PlayerPrefs.GetInt("c9") == 1 ? true : false;
+            code1 = PlayerPrefs.GetInt("c1") == 1;
+            code2 = PlayerPrefs.GetInt("c2") == 1;
+            code3 = PlayerPrefs.GetInt("c3") == 1;
+            code4 = PlayerPrefs.GetInt("c4") == 1;
+            code5 = PlayerPrefs.GetInt("c5") == 1;
+            code6 = PlayerPrefs.GetInt("c6") == 1;
+            code7 = PlayerPrefs.GetInt("c7") == 1;
+            code8 = PlayerPrefs.GetInt("c8") == 1;
+            code9 = PlayerPrefs.GetInt("c9") == 1;
 
             costume = PlayerPrefs.GetInt("costume");
             savedPops = PlayerPrefs.GetInt("pops");
 
-            defaultRGB = PlayerPrefs.GetInt("dRGB") == 1 ? true : false;
+            defaultRGB = PlayerPrefs.GetInt("dRGB") == 1;
         }
 
         Debug.Log(achievement3);
@@ -128,13 +128,14 @@ public class SaveData : MonoBehaviour
 
     public static void Load(int id, GameObject obj)
     {
-        switch(id)
+        switch (id)
         {
             case 0:
                 if (unlockTimer)
                 {
                     obj.GetComponent<Buy>().purchased = true;
-                } else
+                }
+                else
                 {
                     obj.GetComponent<Buy>().purchased = false;
                 }
@@ -266,7 +267,7 @@ public class SaveData : MonoBehaviour
                 break;
         }
     }
-    
+
     public static void Save()
     {
         PlayerPrefs.SetInt("uTimer", unlockTimer ? 1 : 0);

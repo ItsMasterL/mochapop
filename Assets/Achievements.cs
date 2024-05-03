@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Achievements : MonoBehaviour
 {
-   public void Achievement(int id)
+    public void Achievement(int id)
     {
         GetComponent<TextRGB>().alpha = 5;
         GetComponent<AudioSource>().Play();

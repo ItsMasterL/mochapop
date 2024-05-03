@@ -12,7 +12,7 @@ public class BgRGB : MonoBehaviour
     Camera cam;
     bool effect;
 
-    public void toggleEffect()
+    public void ToggleEffect()
     {
         effect = !effect;
         SaveData.defaultRGB = effect;

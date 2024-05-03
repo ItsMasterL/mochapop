@@ -11,7 +11,7 @@ public class SlideToTheLeft : MonoBehaviour
     public float heightMin = -2.5f;
     public float heightMax = 2.75f;
     public bool alternateMethod;
-    
+
     // Update is called once per frame
     void Update()
     {

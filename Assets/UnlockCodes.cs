@@ -26,7 +26,7 @@ public class UnlockCodes : MonoBehaviour
     private int Check()
     {
         string input = GetComponent<TMP_InputField>().text.ToLower().Replace(" ", string.Empty);
-        foreach(string code in codes)
+        foreach (string code in codes)
         {
             if (code == input)
             {
@@ -41,7 +41,7 @@ public class UnlockCodes : MonoBehaviour
 
     public void SubmitCode()
     {
-        if (GetComponent<TMP_InputField>().text.ToLower().Replace(" ",string.Empty) != string.Empty)
+        if (GetComponent<TMP_InputField>().text.ToLower().Replace(" ", string.Empty) != string.Empty)
         {
             int result = Check();
             GetComponent<TMP_InputField>().text = string.Empty;

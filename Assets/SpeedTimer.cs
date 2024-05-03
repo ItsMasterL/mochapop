@@ -21,8 +21,8 @@ public class SpeedTimer : MonoBehaviour
         {
             isActive = true;
             mocha.GetComponent<Pop>().canPop = false;
-            discord.gameObject.GetComponent<Status>().presence.details = "Popping, but faster";
-            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
+            discord.GetComponent<Status>().presence.details = "Popping, but faster";
+            DiscordRpc.UpdatePresence(ref discord.GetComponent<Status>().presence);
         }
     }
 
@@ -58,8 +58,8 @@ public class SpeedTimer : MonoBehaviour
             count = 0;
             resultsTime = 3;
             popcounted = 0;
-            discord.gameObject.GetComponent<Status>().presence.details = "Popping";
-            DiscordRpc.UpdatePresence(ref discord.gameObject.GetComponent<Status>().presence);
+            discord.GetComponent<Status>().presence.details = "Popping";
+            DiscordRpc.UpdatePresence(ref discord.GetComponent<Status>().presence);
             foreach (GameObject i in disable)
             {
                 i.SetActive(true);

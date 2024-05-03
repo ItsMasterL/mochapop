@@ -125,7 +125,7 @@ public class Pop : MonoBehaviour
         canPop = CanPop;
     }
 
-    public void popSounds()
+    public void PopSounds()
     {
         makesNoise = !makesNoise;
     }
@@ -176,7 +176,8 @@ public class Pop : MonoBehaviour
             popcount += debugPopcount;
             debugPopcount = 0;
         }
-        if (canPop == true) {
+        if (canPop == true)
+        {
 
             if (Input.GetKeyDown(KeyCode.Space) || (isAndroid == true && Input.GetMouseButtonDown(0)))
             {
@@ -202,7 +203,7 @@ public class Pop : MonoBehaviour
             GameObject.Find("Achievement").GetComponent<Achievements>().Achievement(2);
         }
 
-        
+
     }
     public void OpenPop()
     {

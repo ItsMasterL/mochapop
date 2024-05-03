@@ -29,7 +29,7 @@ public class MoveTrigger : MonoBehaviour
         lerpMultiplier = 1 / moveTime;
         camX = new float[group.Length];
         camY = new float[group.Length];
-        foreach(GameObject obj in group)
+        foreach (GameObject obj in group)
         {
             camX[index] = obj.transform.position.x;
             camY[index] = obj.transform.position.y;

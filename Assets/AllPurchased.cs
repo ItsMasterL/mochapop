@@ -13,7 +13,7 @@ public class AllPurchased : MonoBehaviour
         if (!SaveData.achievement3)
         {
             e = 0;
-            foreach(GameObject obj in purchases)
+            foreach (GameObject obj in purchases)
             {
                 if (obj.GetComponent<Buy>().purchased == true)
                 {

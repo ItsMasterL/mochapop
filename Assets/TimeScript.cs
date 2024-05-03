@@ -10,10 +10,10 @@ public class TimeScript : MonoBehaviour
     public TextMeshProUGUI popscore;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    //void Start()
+    //{
 
-    }
+    //}
 
     // Update is called once per frame
     void Update()
@@ -32,7 +32,8 @@ public class TimeScript : MonoBehaviour
         {
             int tt_disptime = Mathf.FloorToInt(tt_beginTime) + 1;
             popscore.text = tt_disptime.ToString("0");
-        } else if (tt_isActive == true && tt_beginTime <= 0 && tt_countdown > 0)
+        }
+        else if (tt_isActive == true && tt_beginTime <= 0 && tt_countdown > 0)
         {
             popscore.text = tt_countdown.ToString("0.00");
         }

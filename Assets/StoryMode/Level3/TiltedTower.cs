@@ -30,12 +30,13 @@ public class TiltedTower : MonoBehaviour
         else
         {
             tiltPercent += mocha.transform.position.x * tiltRate;
-            foreach(GameObject obj in tilting)
+            foreach (GameObject obj in tilting)
             {
                 if ((obj.transform.rotation.z < tiltMax && tiltPercent > 0) || (obj.transform.rotation.z > -tiltMax && tiltPercent < 0))
                 {
                     obj.transform.RotateAround(new Vector3(0, 0, 0), new Vector3(0, 0, 1), tiltPercent * Time.deltaTime);
-                } else
+                }
+                else
                 {
                     itsJoever = true;
                 }
