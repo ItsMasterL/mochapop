@@ -57,7 +57,7 @@ public class SceneChange : MonoBehaviour
                 transition = false;
                 if (nextScene == "Cutscenes")
                 {
-                    GameObject.Find("StoryModeManager").GetComponent<StoryModeManager>().watchCutscene = true;
+                   // GameObject.Find("StoryModeManager").GetComponent<StoryModeManager>().watchCutscene = true;
                 }
                 SceneManager.LoadScene(nextScene);
             }
