@@ -17,226 +17,73 @@ public class RewardReveal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        switch (achievementNum)
+        switch (achievementNum) // TODO: Save this mess
         {
             case 1:
-                if (SaveData.achievement1)
-                {
-                    text.text = "Reward: Blushy Costume";
-                } else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.achievement1 ? "Reward: Blushy Costume" : "Reward: ???";
                 break;
             case 2:
-                if (SaveData.achievement2)
-                {
-                    text.text = "Reward: Cool Shades";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.achievement2 ? "Reward: Cool Shades" : "Reward: ???";
                 break;
             case 3:
-                if (SaveData.achievement3)
-                {
-                    text.text = "Reward: Early Colors";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.achievement3 ? "Reward: Early Colors" : "Reward: ???";
                 break;
             case 4:
-                if (SaveData.storyLevel > 1)
-                {
-                    text.text = "Reward: Gamer Bird";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 1 ? "Reward: Gamer Bird" : "Reward: ???";
                 break;
             case 5:
-                if (SaveData.storyLevel > 2)
-                {
-                    text.text = "Reward: Patient Croc";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 2 ? "Reward: Patient Croc" : "Reward: ???";
                 break;
             case 6:
-                if (SaveData.storyLevel > 3)
-                {
-                    text.text = "Reward: Clumsy Ferret";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 3 ? "Reward: Clumsy Ferret" : "Reward: ???";
                 break;
             case 7:
-                if (SaveData.storyLevel > 4)
-                {
-                    text.text = "Reward: Slick Brick";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 4 ? "Reward: Slick Brick" : "Reward: ???";
                 break;
             case 8:
-                if (SaveData.storyLevel > 5)
-                {
-                    text.text = "Reward: DJ Capybara";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 5 ? "Reward: DJ Capybara" : "Reward: ???";
                 break;
             case 9:
-                if (SaveData.storyLevel > 6)
-                {
-                    text.text = "Reward: Very Safe Wolf";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 6 ? "Reward: Very Safe Wolf" : "Reward: ???";
                 break;
             case 10:
-                if (SaveData.storyLevel > 7)
-                {
-                    text.text = "Reward: Manic Raccoon";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 7 ? "Reward: Manic Raccoon" : "Reward: ???";
                 break;
             case 11:
-                if (SaveData.storyLevel > 8)
-                {
-                    text.text = "Reward: Quite Precise Pile of Debris";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 8 ? "Reward: Quite Precise Pile of Debris" : "Reward: ???";
                 break;
             case 12:
-                if (SaveData.storyLevel > 9)
-                {
-                    text.text = "Reward: Drowsy Hedgehog";
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 9 ? "Reward: Drowsy Hedgehog" : "Reward: ???";
                 break;
             case 13:
-                if (SaveData.storyLevel > 10)
-                {
-                    text.text = "Reward: More Mature Mocha"; //Long hair
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.storyLevel > 10 ? "Reward: More Mature Mocha" : "Reward: ???"; //Long hair
                 break;
             case 14:
-                if (SaveData.code1)
-                {
-                    text.text = "Reward: Switch Port Mocha"; //Brett's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code1 ? "Reward: Switch Port Mocha" : "Reward: ???"; //Brett's Code
                 break;
             case 15:
-                if (SaveData.code2)
-                {
-                    text.text = "Reward: Extocine"; //Exto's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code2 ? "Reward: Extocine" : "Reward: ???"; //Exto's Code
                 break;
             case 16:
-                if (SaveData.code3)
-                {
-                    text.text = "Reward: Deon"; //Deon's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code3 ? "Reward: Deon" : "Reward: ???"; //Deon's Code
                 break;
             case 17:
-                if (SaveData.code4)
-                {
-                    text.text = "Reward: Syowen"; //Syowen's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code4 ? "Reward: Syowen" : "Reward: ???"; //Syowen's Code
                 break;
             case 18:
-                if (SaveData.code5)
-                {
-                    text.text = "Reward: Buneria"; //DJ Capybara's VA Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code5 ? "Reward: Buneria" : "Reward: ???"; //DJ Capybara's VA Code
                 break;
             case 19:
-                if (SaveData.code6)
-                {
-                    text.text = "Reward: Fudgi"; //Fudgikake's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code6 ? "Reward: Fudgi" : "Reward: ???"; //Fudgikake's Code
                 break;
             case 20:
-                if (SaveData.code7)
-                {
-                    text.text = "Reward: Foxxicle"; //Dreamsicle's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code7 ? "Reward: Foxxicle" : "Reward: ???"; //Dreamsicle's Code
                 break;
             case 21:
-                if (SaveData.code8)
-                {
-                    text.text = "Reward: Super Bushy Man"; //Arbitrary's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code8 ? "Reward: Super Bushy Man" : "Reward: ???"; //Arbitrary's Code
                 break;
             case 22:
-                if (SaveData.code9)
-                {
-                    text.text = "Reward: T Dirty"; //t_dirty's Code
-                }
-                else
-                {
-                    text.text = "Reward: ???";
-                }
+                text.text = SaveData.code9 ? "Reward: T Dirty" : "Reward: ???"; //t_dirty's Code
                 break;
         }
     }

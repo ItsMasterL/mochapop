@@ -22,7 +22,8 @@ public class FallingObject : MonoBehaviour
         if (transform.position.y < 0)
         {
             col.enabled = true;
-        } else
+        }
+        else
         {
             col.enabled = false;
         }

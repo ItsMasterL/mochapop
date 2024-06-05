@@ -8,6 +8,6 @@ public class ResetStoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneManager.MoveGameObjectToScene(GameObject.Find("StoryModeManager"),SceneManager.GetActiveScene());
+        SceneManager.MoveGameObjectToScene(GameObject.Find("StoryModeManager"), SceneManager.GetActiveScene());
     }
 }

@@ -106,9 +106,9 @@ public class MochaJump : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Snout")
+        if (!collision.gameObject.CompareTag("Snout"))
         {
-            foreach(SlideToTheLeft obj in FindObjectsOfType<SlideToTheLeft>())
+            foreach (SlideToTheLeft obj in FindObjectsOfType<SlideToTheLeft>())
             {
                 obj.enabled = false;
             }

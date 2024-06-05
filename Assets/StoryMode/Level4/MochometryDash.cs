@@ -37,7 +37,7 @@ public class MochometryDash : MonoBehaviour
     bool IsInWall()
     {
         Vector2 position = transform.position;
-        Vector2 direction = new Vector2(1,0f);
+        Vector2 direction = new Vector2(1, 0f);
         float distance;
         distance = 0.25f;
 
@@ -52,7 +52,7 @@ public class MochometryDash : MonoBehaviour
     bool IsNearObstacle()
     {
         Vector2 position = transform.position;
-        Vector2 direction = new Vector2(1,0f);
+        Vector2 direction = new Vector2(1, 0f);
         float distance;
         distance = 2.5f;
 
@@ -196,7 +196,7 @@ public class MochometryDash : MonoBehaviour
             }
         }
         if (IsInWall() && GetComponent<Pop>().canPop) Dieth();
-        
+
         if (transform.position.y > deathCeiling && GetComponent<Pop>().canPop) Dieth();
 
     }
@@ -227,7 +227,7 @@ public class MochometryDash : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Snout")
+        if (!collision.gameObject.CompareTag("Snout"))
         {
             Dieth();
             Debug.Log(collision.gameObject.tag);
@@ -236,9 +236,9 @@ public class MochometryDash : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "UI.Constant")
+        if (collision.CompareTag("UI.Constant"))
             IsOrb = true;
-        if (collision.tag == "UI.Normal")
+        if (collision.CompareTag("UI.Normal"))
         {
             if (rb2.gravityScale > 1)
                 rb2.velocity = new Vector2(0, 28);
@@ -246,21 +246,21 @@ public class MochometryDash : MonoBehaviour
                 rb2.velocity = new Vector2(0, -28);
 
         }
-        if (collision.tag == "UI.Shop")
+        if (collision.CompareTag("UI.Shop"))
             IsGravityOrb = true;
-        if (collision.tag == "UI.Achievements")
+        if (collision.CompareTag("UI.Achievements"))
         {
             if (rb2.gravityScale > 0)
                 rb2.velocity = new Vector2(0, rb2.velocity.y / 2);
             rb2.gravityScale = -Mathf.Abs(rb2.gravityScale);
         }
-        if (collision.tag == "UI.Achievements1")
+        if (collision.CompareTag("UI.Achievements1"))
         {
             if (rb2.gravityScale < 0)
                 rb2.velocity = new Vector2(0, rb2.velocity.y / 2);
             rb2.gravityScale = Mathf.Abs(rb2.gravityScale);
         }
-        if (collision.tag == "UI.Achievements2")
+        if (collision.CompareTag("UI.Achievements2"))
         {
             if (rb2.gravityScale > 0) rb2.velocity = new Vector2(0, 14);
             if (rb2.gravityScale < 0) rb2.velocity = new Vector2(0, -14);

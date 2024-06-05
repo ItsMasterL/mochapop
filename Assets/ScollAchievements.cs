@@ -13,7 +13,7 @@ public class ScollAchievements : MonoBehaviour
     private void Start()
     {
         offset = new float[achievements.Length];
-        foreach(GameObject obj in achievements)
+        foreach (GameObject obj in achievements)
         {
             offset[index] = obj.GetComponent<RectTransform>().anchoredPosition.y;
             index++;
@@ -24,7 +24,7 @@ public class ScollAchievements : MonoBehaviour
 
     public void Scroll()
     {
-        foreach(GameObject obj in achievements)
+        foreach (GameObject obj in achievements)
         {
             RectTransform rect = obj.GetComponent<RectTransform>();
             rect.anchoredPosition = new Vector2(rect.anchoredPosition.x, offset[index] + (GetComponent<Scrollbar>().value * multiplier));

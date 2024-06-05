@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class descend : MonoBehaviour
+public class Descend : MonoBehaviour
 {
     [SerializeField]
     float rate;

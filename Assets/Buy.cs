@@ -20,7 +20,7 @@ public class Buy : MonoBehaviour
         chaching = GameObject.Find("purchase").GetComponent<AudioSource>();
         SaveData.Load(purchaseID, gameObject);
     }
-    
+
     public void Moners()
     {
         if (Pop.popcount >= price && purchased == false)
@@ -28,7 +28,7 @@ public class Buy : MonoBehaviour
             Pop.popcount -= price;
             purchased = true;
             chaching.Play();
-            bought.gameObject.SetActive(true);
+            bought.SetActive(true);
             SaveData.Purchased(purchaseID);
             if (SaveData.unlockBank)
             {
@@ -43,7 +43,7 @@ public class Buy : MonoBehaviour
     public void Undone()
     {
         purchased = false;
-        bought.gameObject.SetActive(false);
+        bought.SetActive(false);
         gameObject.SetActive(true);
     }
 

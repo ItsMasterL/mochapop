@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class crocodile : MonoBehaviour
+public class Crocodile : MonoBehaviour
 {
     Pop pop;
     float timer;
