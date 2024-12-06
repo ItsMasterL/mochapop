@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/Beta.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/Blush.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/ClumsyFerret.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/Cool.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/GamerBird.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/Normal.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/PatientCroc.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/SlickBrick.png</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/default.spritefont</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
