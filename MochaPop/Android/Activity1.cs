@@ -12,7 +12,7 @@ namespace Android
         Icon = "@drawable/icon",
         AlwaysRetainTaskState = true,
         LaunchMode = LaunchMode.SingleInstance,
-        ScreenOrientation = ScreenOrientation.FullUser,
+        ScreenOrientation = ScreenOrientation.Landscape,
         ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.Keyboard | ConfigChanges.KeyboardHidden | ConfigChanges.ScreenSize
     )]
     public class Activity1 : AndroidGameActivity
@@ -27,8 +27,24 @@ namespace Android
             _game = new Engine.Game1();
             _view = _game.Services.GetService(typeof(View)) as View;
 
+            HideSystemUI();
             SetContentView(_view);
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.P)
+            {
+                Window.Attributes.LayoutInDisplayCutoutMode = LayoutInDisplayCutoutMode.ShortEdges;
+            }
             _game.Run();
+        }
+
+
+        public void OnSystemUiVisibilityChange(StatusBarVisibility visibility)
+        {
+            HideSystemUI();
+        }
+
+        private void HideSystemUI()
+        {
+            _view.SystemUiVisibility = (StatusBarVisibility)(SystemUiFlags.LayoutStable | SystemUiFlags.LayoutHideNavigation | SystemUiFlags.LayoutFullscreen | SystemUiFlags.HideNavigation | SystemUiFlags.Fullscreen | SystemUiFlags.ImmersiveSticky);
         }
     }
 }

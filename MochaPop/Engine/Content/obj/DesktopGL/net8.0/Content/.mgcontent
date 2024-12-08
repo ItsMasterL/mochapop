@@ -4,6 +4,43 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/cf_a.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/cf_e.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/cf_i.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/cf_o.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/cf_u.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/djc_a.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/djc_e.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/djc_i.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/djc_o.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/djc_u.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/gb_a.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/gb_e.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/gb_i.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/gb_o.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/gb_u.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/mm_a.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/mm_e.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/mm_i.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/mm_o.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/mm_u.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/pc_0.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/pc_a.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/pc_e.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/pc_i.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/pc_u.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/pop.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/qppod_a.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/qppod_e.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/qppod_i.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/qppod_o.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/qppod_u.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/sb_a.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/sb_e.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/sb_i.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/sb_o.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/sb_u.wav</File>
+    <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sounds/unpop.wav</File>
     <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/Beta.png</File>
     <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/Blush.png</File>
     <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/Characters/Sprites/ClumsyFerret.png</File>
@@ -15,6 +52,43 @@
     <File>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/default.spritefont</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

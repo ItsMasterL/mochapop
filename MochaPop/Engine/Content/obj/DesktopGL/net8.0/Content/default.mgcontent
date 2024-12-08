@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/default.spritefont</SourceFile>
-  <SourceTime>2022-07-26T04:44:10-07:00</SourceTime>
+  <SourceTime>2024-12-07T17:17:57.6880564-08:00</SourceTime>
   <DestFile>D:/Documents/GitHub/mochapop/MochaPop/Engine/Content/bin/DesktopGL/Content/default.xnb</DestFile>
-  <DestTime>2024-12-05T18:55:47.4926671-08:00</DestTime>
+  <DestTime>2024-12-07T17:18:00.6840574-08:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2022-07-26T04:44:56-07:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

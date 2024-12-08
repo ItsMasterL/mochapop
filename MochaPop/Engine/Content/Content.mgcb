@@ -13,6 +13,228 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Characters/Sounds/cf_a.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/cf_a.wav
+
+#begin Characters/Sounds/cf_e.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/cf_e.wav
+
+#begin Characters/Sounds/cf_i.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/cf_i.wav
+
+#begin Characters/Sounds/cf_o.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/cf_o.wav
+
+#begin Characters/Sounds/cf_u.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/cf_u.wav
+
+#begin Characters/Sounds/djc_a.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/djc_a.wav
+
+#begin Characters/Sounds/djc_e.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/djc_e.wav
+
+#begin Characters/Sounds/djc_i.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/djc_i.wav
+
+#begin Characters/Sounds/djc_o.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/djc_o.wav
+
+#begin Characters/Sounds/djc_u.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/djc_u.wav
+
+#begin Characters/Sounds/gb_a.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/gb_a.wav
+
+#begin Characters/Sounds/gb_e.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/gb_e.wav
+
+#begin Characters/Sounds/gb_i.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/gb_i.wav
+
+#begin Characters/Sounds/gb_o.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/gb_o.wav
+
+#begin Characters/Sounds/gb_u.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/gb_u.wav
+
+#begin Characters/Sounds/mm_a.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/mm_a.wav
+
+#begin Characters/Sounds/mm_e.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/mm_e.wav
+
+#begin Characters/Sounds/mm_i.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/mm_i.wav
+
+#begin Characters/Sounds/mm_o.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/mm_o.wav
+
+#begin Characters/Sounds/mm_u.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/mm_u.wav
+
+#begin Characters/Sounds/pc_0.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/pc_0.wav
+
+#begin Characters/Sounds/pc_a.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/pc_a.wav
+
+#begin Characters/Sounds/pc_e.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/pc_e.wav
+
+#begin Characters/Sounds/pc_i.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/pc_i.wav
+
+#begin Characters/Sounds/pc_u.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/pc_u.wav
+
+#begin Characters/Sounds/pop.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/pop.wav
+
+#begin Characters/Sounds/qppod_a.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/qppod_a.wav
+
+#begin Characters/Sounds/qppod_e.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/qppod_e.wav
+
+#begin Characters/Sounds/qppod_i.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/qppod_i.wav
+
+#begin Characters/Sounds/qppod_o.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/qppod_o.wav
+
+#begin Characters/Sounds/qppod_u.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/qppod_u.wav
+
+#begin Characters/Sounds/sb_a.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/sb_a.wav
+
+#begin Characters/Sounds/sb_e.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/sb_e.wav
+
+#begin Characters/Sounds/sb_i.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/sb_i.wav
+
+#begin Characters/Sounds/sb_o.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/sb_o.wav
+
+#begin Characters/Sounds/sb_u.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/sb_u.wav
+
+#begin Characters/Sounds/unpop.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Characters/Sounds/unpop.wav
+
 #begin Characters/Sprites/Beta.png
 /importer:TextureImporter
 /processor:TextureProcessor
